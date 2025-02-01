@@ -1,0 +1,43 @@
+.metrics {
+  /* max-width: 94%; */
+  /* margin: auto; */
+  background-color: var(--color-light-grey);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4rem;
+  column-gap: 2rem;
+
+  border-radius: 0.8rem;
+}
+
+.metric {
+  display: grid;
+  justify-content: center;
+}
+
+.metric p {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.metricHeading {
+  text-align: center;
+}
+.metricHeading span {
+  color: var(--color-orange);
+}
+
+@media (max-width: 68em) {
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+  }
+}
+
+@media (max-width: 33em) {
+  .metrics {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+  }
+}

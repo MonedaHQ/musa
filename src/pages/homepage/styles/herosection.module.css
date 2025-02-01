@@ -1,0 +1,55 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #000;
+  color: var(--color-white);
+
+  display: grid;
+  place-items: center;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: brightness(0.3);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+
+  width: 50%;
+  margin: auto;
+
+  display: grid;
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.heroContent h4 {
+  text-align: center;
+  font-weight: 200;
+}
+
+.heroContent a {
+  justify-self: center;
+}
+
+@media (max-width: 70em) {
+  .heroContent {
+    width: 80%;
+  }
+}
+
+@media (max-width: 34.4em) {
+  .heroContent {
+    width: 88%;
+  }
+}

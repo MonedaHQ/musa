@@ -1,0 +1,63 @@
+.section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.noTopPad {
+  padding-top: 0;
+}
+
+.noBottomPad {
+  padding-bottom: 0;
+}
+
+.light {
+  background-color: var(--color-white);
+}
+
+.brown {
+  background-color: var(--color-brown);
+}
+
+.darkBrown {
+  background-color: var(--color-dark-brown);
+}
+
+.grey {
+  background-color: var(--color-light-grey);
+}
+
+.orange {
+  background-color: var(--color-orange);
+}
+.dullOrange {
+  background-color: var(--color-faded-orange);
+}
+
+.margin {
+  max-width: 86%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 75em) {
+  .section {
+    padding: 4rem 0;
+  }
+  .noTopPad {
+    padding-top: 0;
+  }
+}
+
+@media only screen and (max-width: 65em) {
+  .section {
+    padding: 4rem 0;
+  }
+  .noTopPad {
+    padding-top: 0;
+  }
+}
+@media (max-width: 32.5em) {
+  .margin {
+    max-width: 86%;
+  }
+}

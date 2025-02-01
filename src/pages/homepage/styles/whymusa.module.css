@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  row-gap: 3rem;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container h2 span {
+  color: var(--color-orange);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  align-items: center;
+}
+
+.benefitsBox {
+  display: grid;
+  row-gap: 1.4rem;
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.4rem;
+}
+.benefit svg {
+  width: 3.2rem;
+  height: 3.2rem;
+  fill: var(--color-orange);
+}
+
+.getStarted {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.getStarted p,
+.getStarted a {
+  font-weight: 400;
+}
+
+.getStarted a {
+  color: var(--color-orange);
+  text-decoration: underline;
+}
+
+.video {
+  border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 64em) {
+  .content {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 29em) {
+  .getStarted {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}

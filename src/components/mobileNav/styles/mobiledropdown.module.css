@@ -1,0 +1,17 @@
+/* mobiledropdown.module.css */
+.dropdown {
+  background-color: var(--color-primary-hover);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  min-height: 0;
+  color: var(--color-white);
+  /* position: relative;  */
+  /* transition: height 0.3s ease, opacity 0.3s ease; */
+}
+
+.navList {
+  list-style: none;
+  padding: 2rem 2rem;
+  display: grid;
+  row-gap: 1.3rem;
+}

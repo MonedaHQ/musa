@@ -1,0 +1,16 @@
+.link {
+  font-size: 2rem;
+  color: var(--color-domena-brown);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .link {
+    font-size: 1.6rem;
+  }
+}

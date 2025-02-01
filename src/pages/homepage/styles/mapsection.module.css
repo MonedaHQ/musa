@@ -1,0 +1,33 @@
+.mapSection {
+  color: var(--color-white);
+
+  display: grid;
+  row-gap: 3rem;
+  justify-items: center;
+}
+
+.mapInfo {
+  text-align: center;
+}
+
+.mapInfo p {
+  text-align: center;
+}
+
+.mapEmbed {
+  display: grid;
+  row-gap: 2rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.mapEmbed iframe {
+  width: 100%;
+  height: 54rem;
+}
+
+@media (max-width: 45.625em) {
+  .mapEmbed iframe {
+    height: 24em;
+  }
+}

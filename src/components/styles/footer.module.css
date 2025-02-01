@@ -1,0 +1,60 @@
+.container {
+  background-color: var(--color-light-grey);
+  padding: 8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.linkList {
+  max-width: 60%;
+  margin: auto;
+}
+
+.linkList a {
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.linkList a:hover {
+  color: var(--color-orange);
+}
+
+@media (max-width: 72.5em) {
+  .container {
+    padding: 4rem;
+  }
+}
+
+.linkList {
+  max-width: 80%;
+}
+
+@media (max-width: 51.9375em) {
+  .container {
+    padding: 2rem;
+  }
+
+  .linkList {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 40.5625em) {
+  .container {
+    align-items: flex-start;
+  }
+  .linkList {
+    display: grid;
+    row-gap: 3rem;
+    margin: 0;
+  }
+
+  .linkList a {
+    padding: 0 2rem;
+    text-align: start;
+  }
+}

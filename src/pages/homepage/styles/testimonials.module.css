@@ -1,0 +1,59 @@
+.testimonials {
+  background-color: var(--color-light-grey);
+  padding: 6rem;
+  border-radius: 0.8rem;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 2.6rem;
+  border-radius: 0.8rem;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.client {
+  align-self: self-end;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.client img {
+  width: 2.4rem;
+  height: 2.4rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5rem;
+}
+
+@media (max-width: 75em) {
+  .testimonials {
+    padding: 2.4rem 4rem;
+  }
+}
+
+@media (max-width: 68em) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+}
+
+@media (max-width: 33em) {
+  .testimonials {
+    padding: 2.4rem;
+  }
+
+  .cards {
+    row-gap: 1.8rem;
+  }
+}

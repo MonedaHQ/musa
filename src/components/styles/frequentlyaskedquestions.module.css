@@ -1,0 +1,96 @@
+.faqComponent {
+  display: grid;
+  row-gap: 6rem;
+}
+
+.headingBox {
+  display: grid;
+  justify-items: center;
+  row-gap: 2.2rem;
+}
+
+.faqsBox {
+  display: grid;
+  row-gap: 2.6rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+.line:last-of-type {
+  display: none;
+}
+
+.questionBox {
+  display: grid;
+  row-gap: 1.8rem;
+}
+
+.questionHeading {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.question {
+  transition: all 0.3s ease;
+}
+
+.questionHeading:hover > .question {
+  color: var(--color-orange);
+}
+
+.activeQuestion {
+  color: var(--color-orange);
+}
+
+.questionHeading:hover > .iconBox svg {
+  fill: var(--color-orange);
+}
+
+.iconBox {
+  cursor: pointer;
+}
+
+.iconBox svg {
+  width: 2.4rem;
+  height: 2.4rem;
+
+  transition: all 0.3s ease;
+}
+
+.iconBox:hover svg {
+  fill: var(--color-orange);
+}
+
+.answerBox {
+  overflow: hidden;
+  background: rgba(204, 85, 0, 0.07);
+  padding: 2.6rem;
+  border-radius: 0.8rem;
+}
+
+.line {
+  width: 80%;
+  height: 1px;
+  background-color: var(--color-light-grey);
+  margin: auto;
+}
+
+@media (max-width: 54em) {
+  .faqsBox {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 32.5em) {
+  .iconBox img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .questionHeading {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    column-gap: 3rem;
+  }
+}

@@ -1,0 +1,125 @@
+.mainParent {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 3rem;
+  row-gap: 3rem;
+  align-items: start;
+}
+
+.contactInfoParent {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contactCard {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 3rem;
+
+  padding: 2rem 4rem;
+  border-radius: 1.4rem;
+}
+
+.icon {
+  background-color: var(--color-faded-orange);
+  padding: 2rem;
+  border-radius: 50rem;
+
+  display: grid;
+  place-items: center;
+}
+
+.icon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: var(--color-orange);
+}
+
+.formParent {
+  background-color: var(--color-white);
+  border-radius: 1.8rem;
+  padding: 4rem;
+
+  display: grid;
+  row-gap: 3rem;
+}
+
+.formHeading {
+  display: grid;
+  row-gap: 0.8rem;
+}
+
+.textarea {
+  grid-column: 1/-1;
+}
+
+.notificationContainer {
+  display: grid;
+  place-items: center;
+  row-gap: 2rem;
+}
+
+.notificationContainer p {
+  text-align: center;
+}
+.notificationContainer svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.success svg {
+  fill: var(--color-green);
+}
+
+.failed svg {
+  fill: var(--color-orange);
+}
+
+@media (max-width: 78.8125em) {
+  .mainParent {
+    grid-template-columns: 1fr;
+  }
+  .contactInfoParent {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2.2rem;
+  }
+}
+
+@media (max-width: 56.6875em) {
+  .contactInfoParent {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+    margin: auto;
+  }
+
+  .formParent {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 32.6875em) {
+  .contactInfoParent {
+    max-width: 100%;
+  }
+
+  .contactCard {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .contactCard {
+    padding: 1rem;
+  }
+
+  .icon {
+    padding: 1rem;
+  }
+
+  .icon svg {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
