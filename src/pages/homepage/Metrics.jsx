@@ -9,7 +9,7 @@ const data = [
     prefix: null,
     currency: null,
     suffix: '+',
-    description: 'CMEs onboarded',
+    description: 'CSMEs onboarded',
   },
   {
     metric: 50,
