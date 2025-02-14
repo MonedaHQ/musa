@@ -59,7 +59,7 @@ function VideoPlayer() {
     <iframe
       width="560"
       height="315"
-      src="https://www.youtube.com/embed/E9i6J5wkCcw?rel=0&modestbranding=1&showinfo=0&autoplay=0&controls=1"
+      src="https://www.youtube.com/embed/tfpg2dGHZ74?si=4p38IPUjfRcNUSRE?rel=0&modestbranding=1&showinfo=0&autoplay=0&controls=1"
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       referrerPolicy="strict-origin-when-cross-origin"
