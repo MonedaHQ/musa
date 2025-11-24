@@ -26,7 +26,10 @@ function HeroContent() {
         No-collateral funding. Hands-on execution support. <br />
         For Critical SMEs driving Africa’s transformation.
       </h4>
-      <Button variant="secondary" href="https://musa.monedainvest.app/">
+      <Button
+        variant="secondary"
+        href="https://musa-app.moneda.africa/account/login?redirect=/dashboard"
+      >
         Get started today
       </Button>
     </div>
