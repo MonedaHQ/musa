@@ -1,6 +1,11 @@
-import { IoIosSpeedometer } from 'react-icons/io';
-import { FaRobot } from 'react-icons/fa6';
-import { PiCurrencyDollarSimpleFill, PiSmileyFill } from 'react-icons/pi';
+import { IoIosSpeedometer, IoIosTrendingUp } from 'react-icons/io';
+import { TbBrandSpeedtest } from 'react-icons/tb';
+import { FaCircleChevronUp, FaRobot } from 'react-icons/fa6';
+import {
+  PiCardsLight,
+  PiCurrencyDollarSimpleFill,
+  PiSmileyFill,
+} from 'react-icons/pi';
 import Section from '@/components/Section';
 
 import styles from './styles/features.module.css';
@@ -10,17 +15,19 @@ import { useForm } from 'react-hook-form';
 import FormInput from '@/components/formElements/FormInput';
 import Button from '@/components/Button';
 import { useNewsletter } from '@/hooks/useNewsletter';
+import { HiCubeTransparent } from 'react-icons/hi2';
+import { RiSpeedUpFill } from 'react-icons/ri';
 
 const features = [
   {
-    icon: <IoIosSpeedometer />,
+    icon: <IoIosTrendingUp />,
     heading: 'Scale with ease ',
     paragraph:
       'Allows alternative financiers operate across African markets without borders',
     image: { src: '/assets/screens/kyc-screen.jpg', alt: 'Musa KYC Screen' },
   },
   {
-    icon: <FaRobot />,
+    icon: <HiCubeTransparent />,
     heading: 'Transparency',
     paragraph:
       'Access real-time reports using AI-driven risk rating and analytics boosting risk management & investor confidence',
@@ -30,14 +37,14 @@ const features = [
     },
   },
   {
-    icon: <PiCurrencyDollarSimpleFill />,
+    icon: <RiSpeedUpFill />,
     heading: 'Speed',
     paragraph:
       'Automation which has crashed transaction turn-around time by 70%.',
     image: { src: '/assets/screens/new-transaction.jpg', alt: 'FX Conversion' },
   },
   {
-    icon: <PiSmileyFill />,
+    icon: <PiCardsLight />,
     heading: 'Payments',
     paragraph: 'End-to-end processing to turn SMEs credit into real growth',
     image: { src: '/assets/screens/dashboard.jpg', alt: 'Seamless UX' },

@@ -165,7 +165,7 @@ function FormFields({ contactUs, formActions, isSubmitting, handleSubmit }) {
       subject: 'Contact Form Submission',
       data,
     };
-    console.log(newData);
+    // console.log(newData);
     contactUs(newData);
   }
 

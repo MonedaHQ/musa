@@ -10,7 +10,7 @@ const frequentlyAskedQuestions = [
   {
     question: 'What is Musa?',
     answer:
-      'Musa is Moneda’s innovative funding and execution support platform designed to empower Critical SMEs in Africa’s natural resource value chain. It provides no-collateral funding, seamless transaction management, and hands-on support to help SMEs scale and thrive.',
+      'Musa is a proprietary lending, payments, and transaction-management software built to power Africa’s alternative credit ecosystem. Built by Moneda Invest Africa, Musa empowers alternative financiers specifically for Africa’s Critical SMEs in energy, minerals, agriculture and infrastructure to seamlessly provide credit, facilitate cross-border payments, and manage risk with speed and transparency.',
   },
   {
     question: 'Who can use Musa?',
