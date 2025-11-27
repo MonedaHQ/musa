@@ -5,31 +5,31 @@ import Section from '@/components/Section';
 
 const data = [
   {
-    metric: 22,
+    metric: 50,
     prefix: null,
     currency: null,
     suffix: '+',
     description: 'CSMEs onboarded',
   },
   {
-    metric: 50,
+    metric: 65,
     prefix: null,
     currency: null,
     suffix: '+',
     description: 'Transaction Requests',
   },
   {
-    metric: 23.59,
+    metric: 25,
     prefix: '$',
     currency: 'm',
     suffix: '+',
     description: 'value of funding requests',
   },
   {
-    metric: 1.36,
+    metric: 2,
     prefix: '$',
     currency: 'm',
-    suffix: '+',
+    suffix: '',
     description: 'Approved Requests',
   },
 ];

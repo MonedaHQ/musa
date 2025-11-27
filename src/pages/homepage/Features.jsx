@@ -9,20 +9,21 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import FormInput from '@/components/formElements/FormInput';
 import Button from '@/components/Button';
+import { useNewsletter } from '@/hooks/useNewsletter';
 
 const features = [
   {
     icon: <IoIosSpeedometer />,
-    heading: 'KYC Completed in Seconds',
+    heading: 'Scale with ease ',
     paragraph:
-      'No delays, no paperwork. Get verified in record time so you can access funding when you need it—without the usual bottlenecks.',
+      'Allows alternative financiers operate across African markets without borders',
     image: { src: '/assets/screens/kyc-screen.jpg', alt: 'Musa KYC Screen' },
   },
   {
     icon: <FaRobot />,
-    heading: 'Bespoke Risk Rating Algorithm',
+    heading: 'Transparency',
     paragraph:
-      'Musa understands your business beyond just numbers. Our smart risk rating system ensures fair, tailored funding decisions designed for African SMEs.',
+      'Access real-time reports using AI-driven risk rating and analytics boosting risk management & investor confidence',
     image: {
       src: '/assets/screens/contractor-profile.jpg',
       alt: 'Risk Rating Algorithm',
@@ -30,16 +31,15 @@ const features = [
   },
   {
     icon: <PiCurrencyDollarSimpleFill />,
-    heading: 'Real-Time FX Conversion',
+    heading: 'Speed',
     paragraph:
-      'Make transaction requests seamlessly in USD, GBP, EUR, and NGN. Musa ensures instant conversions, giving you flexibility in a dynamic market.',
+      'Automation which has crashed transaction turn-around time by 70%.',
     image: { src: '/assets/screens/new-transaction.jpg', alt: 'FX Conversion' },
   },
   {
     icon: <PiSmileyFill />,
-    heading: 'Seamless User Experience',
-    paragraph:
-      'From application to execution, every step is designed for ease. No unnecessary steps, just a smooth, intuitive platform that gets you funded fast.',
+    heading: 'Payments',
+    paragraph: 'End-to-end processing to turn SMEs credit into real growth',
     image: { src: '/assets/screens/dashboard.jpg', alt: 'Seamless UX' },
   },
 ];
@@ -127,18 +127,21 @@ function Feature({ feature, index, currentIndex, setCurrentIndex }) {
 }
 
 function Newsletter() {
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState, reset } = useForm();
   const { errors } = formState;
 
   const formActions = { register, errors };
 
+  const { newsletterSignup, isSigningUp } = useNewsletter();
+
   function onSubmit(data) {
     const newData = {
-      first_name: data.first_name_1,
-      last_name: data.last_name_1,
       email: data.email_1,
+      listId: 56,
+      attributes: { FIRSTNAME: data.first_name_1, LASTNAME: data.last_name_1 },
     };
-    console.log(newData);
+
+    newsletterSignup(newData, { onSettled: () => reset() });
   }
 
   return (
