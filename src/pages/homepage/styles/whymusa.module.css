@@ -1,73 +1,120 @@
 .container {
-  display: grid;
-  row-gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 4rem 0;
 }
 
-.container h2 {
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: var(--color-orange);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.description {
+  color: #666;
+  font-size: 1.8rem;
+  line-height: 1.6;
   text-align: center;
 }
 
-.container h2 span {
-  color: var(--color-orange);
-}
-
-.content {
+.contentGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 3rem;
+  grid-template-columns: 1fr 1fr; /* Two columns like valid design */
   align-items: center;
+  gap: 6rem;
 }
 
-.benefitsBox {
-  display: grid;
-  row-gap: 1.4rem;
-}
-
-.benefit {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: 1.4rem;
-}
-.benefit svg {
-  width: 3.2rem;
-  height: 3.2rem;
-  fill: var(--color-orange);
-}
-
-.getStarted {
+.featureList {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.featureItem {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  color: var(--color-white);
 }
 
-.getStarted p,
-.getStarted a {
-  font-weight: 400;
+.iconWrapper svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
-.getStarted a {
-  color: var(--color-orange);
-  text-decoration: underline;
+.featureText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.video {
-  border: none;
+.featureText h3 {
+  font-size: 2.2rem;
+  color: var(--color-black);
+}
+
+.featureText p {
+  color: #666;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.imageContainer {
+  background-color: #f5f6f8;
+  border-radius: 1.6rem;
+  padding: 4rem 4rem 0 4rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
 @media (max-width: 64em) {
-  .content {
+  .contentGrid {
     grid-template-columns: 1fr;
-    row-gap: 2rem;
+    gap: 4rem;
   }
 }
 
-@media (max-width: 29em) {
-  .getStarted {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
+@media (max-width: 37.5em) {
+  .featureItem {
+    flex-direction: row;
+  }
+
+  .imageContainer {
+    padding: 2rem 2rem 0 2rem;
   }
 }

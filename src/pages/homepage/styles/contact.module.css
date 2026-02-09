@@ -1,125 +1,213 @@
-.mainParent {
+.container {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  column-gap: 3rem;
-  row-gap: 3rem;
-  align-items: start;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 6rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-.contactInfoParent {
-  display: grid;
-  row-gap: 2rem;
+/* Info Column */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-top: 2rem;
 }
 
-.contactCard {
-  background-color: var(--color-white);
-  display: grid;
-  grid-template-columns: max-content 1fr;
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.iconCircle {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  column-gap: 3rem;
-
-  padding: 2rem 4rem;
-  border-radius: 1.4rem;
+  flex-shrink: 0;
 }
 
-.icon {
-  background-color: var(--color-faded-orange);
-  padding: 2rem;
-  border-radius: 50rem;
+.iconCircle svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-white);
+}
 
+.infoItem h5 {
+  font-size: var(--font-size-paragraph-regular);
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.infoItem p {
+  color: #555;
+  font-size: var(--font-size-paragraph-regular);
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Link styles removed as they are now handled by Button component variant="link-light" */
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.socials h5 {
+  font-size: var(--font-size-paragraph-regular);
+  font-weight: 400;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.socialIcon:hover {
+  transform: translateY(-2px);
+}
+
+.socialIcon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: var(--color-white);
+}
+
+/* Form Column */
+.formColumn {
+  padding: 2rem 0;
+}
+
+.heading {
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.row {
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
 }
 
-.icon svg {
-  width: 2.4rem;
-  height: 2.4rem;
-  fill: var(--color-orange);
+.inputGroup {
+  width: 100%;
 }
 
-.formParent {
-  background-color: var(--color-white);
-  border-radius: 1.8rem;
-  padding: 4rem;
-
-  display: grid;
-  row-gap: 3rem;
-}
-
-.formHeading {
-  display: grid;
-  row-gap: 0.8rem;
+.input {
+  width: 100%;
+  padding: 1.2rem 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  font-size: var(--font-size-paragraph-regular);
+  color: var(--color-black);
+  outline: none;
+  font-family: inherit;
+  font-weight: 300;
 }
 
 .textarea {
-  grid-column: 1/-1;
+  resize: vertical;
+  min-height: 4rem;
 }
 
-.notificationContainer {
-  display: grid;
-  place-items: center;
-  row-gap: 2rem;
+.input::placeholder {
+  color: #888;
+  font-weight: 300;
 }
 
-.notificationContainer p {
-  text-align: center;
+.input:focus {
+  border-bottom: 1px solid var(--color-orange);
 }
-.notificationContainer svg {
+
+.formFooter {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  /* width: fit-content; */
+}
+
+.submitBtn {
+  padding: 1.2rem 4rem;
+}
+
+.whatsappLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-black);
+}
+
+.whatsappLink:hover {
+  color: var(--color-orange);
+}
+
+.whatsappIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsappLink svg {
   width: 2.4rem;
   height: 2.4rem;
-}
-
-.success svg {
   fill: var(--color-green);
 }
 
-.failed svg {
-  fill: var(--color-orange);
-}
-
-@media (max-width: 78.8125em) {
-  .mainParent {
+/* Mobile Responsive */
+@media (max-width: 64em) {
+  .container {
     grid-template-columns: 1fr;
-  }
-  .contactInfoParent {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2.2rem;
-  }
-}
-
-@media (max-width: 56.6875em) {
-  .contactInfoParent {
-    grid-template-columns: 1fr;
-    max-width: 80%;
-    margin: auto;
-  }
-
-  .formParent {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 32.6875em) {
-  .contactInfoParent {
+    gap: 5rem;
     max-width: 100%;
   }
 
-  .contactCard {
-    padding: 2rem;
+  .heading {
+    font-size: 4rem;
   }
 }
 
-@media (max-width: 31.25em) {
-  .contactCard {
-    padding: 1rem;
+@media (max-width: 37em) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .icon {
-    padding: 1rem;
-  }
-
-  .icon svg {
-    width: 2.8rem;
-    height: 2.8rem;
+  .formFooter {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
   }
 }

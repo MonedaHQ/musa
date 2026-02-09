@@ -1,24 +1,44 @@
 .heroSection {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  min-height: 800px; /* Ensure it doesn't get too squashed on small screens */
   overflow: hidden;
-  background-color: #000;
+  background-color: #140800;
   color: var(--color-white);
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem; /* Space for fixed header */
 }
 
-.backgroundVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
+.container {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
 
-  filter: brightness(0.3);
+.ellipseTop,
+.ellipseBottom {
+  position: absolute;
+  width: 60rem;
+  height: 60rem;
+  border-radius: 50%;
+  border: 8rem solid rgba(255, 255, 255, 0.05); /* Transparent white stroke */
+  pointer-events: none; /* Ensure they don't interfere with clicks */
+}
+
+.ellipseTop {
+  top: -20rem;
+  right: -20rem; /* Positioning top-right based on screenshot check */
+}
+
+.ellipseBottom {
+  bottom: -20rem;
+  left: -20rem;
 }
 
 .heroContent {
@@ -29,11 +49,42 @@
   margin: auto;
 
   display: grid;
-  row-gap: 2rem;
+  row-gap: 3rem;
+  justify-items: center;
   text-align: center;
 }
 
+.ctaButtons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.dashboardPreview {
+  width: 80%;
+  max-width: 120rem;
+  position: relative;
+  z-index: 2;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  line-height: 0; /* Creates space removal issue fix */
+  margin-bottom: -2px; /* Ensure flush with bottom */
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dashboardPreview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .heroContent h4 {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #d1d1d1;
   text-align: center;
   font-weight: 200;
 }
@@ -48,8 +99,61 @@
   }
 }
 
+@media (max-width: 50em) {
+  .heroContent h4 {
+    font-size: 1.8rem;
+  }
+
+  .ellipseTop,
+  .ellipseBottom {
+    width: 45rem;
+    height: 45rem;
+    border-width: 6rem;
+  }
+
+  .ellipseTop {
+    top: -15rem;
+    right: -15rem;
+  }
+
+  .ellipseBottom {
+    bottom: -15rem;
+    left: -15rem;
+  }
+
+  .dashboardPreview {
+    width: 90%;
+  }
+
+  .ctaButtons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 34.4em) {
   .heroContent {
     width: 88%;
+  }
+
+  .ellipseTop,
+  .ellipseBottom {
+    width: 30rem;
+    height: 30rem;
+    border-width: 4rem;
+  }
+
+  .ellipseTop {
+    top: -10rem;
+    right: -10rem;
+  }
+
+  .ellipseBottom {
+    bottom: -10rem;
+    left: -10rem;
+  }
+
+  .container {
+    gap: 4rem;
   }
 }

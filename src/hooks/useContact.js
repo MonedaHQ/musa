@@ -5,16 +5,14 @@ import toast from 'react-hot-toast';
 
 export function useContactUs() {
   const router = useRouter();
-  const { mutate: contactUs, isLoading: isSubmitting } = useMutation({
-    mutationFn: (data) => {
-      contactApi(data);
-    },
+  const { mutate: contactUs, isPending: isSubmitting } = useMutation({
+    mutationFn: (data) => contactApi(data),
     onSuccess: () => {
       toast.success('Success!');
       router.push(
         { pathname: router.pathname, query: { status: 'success' } },
         undefined,
-        { scroll: false }
+        { scroll: false },
       );
     },
     onError: (err) => {
@@ -22,7 +20,7 @@ export function useContactUs() {
       router.push(
         { pathname: router.pathname, query: { status: 'error' } },
         undefined,
-        { scroll: false }
+        { scroll: false },
       );
     },
   });

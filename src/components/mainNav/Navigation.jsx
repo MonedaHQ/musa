@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import NavLink from './NavLink';
+import Button from '../Button';
 
 import { homeMenuLinks } from '@/data/menu';
 import { useRouter } from 'next/router';
@@ -20,23 +21,47 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
   );
 }
 
+function AuthButtons({ darkHero }) {
+  return (
+    <div className={styles.authButtons}>
+      <Button
+        variant={darkHero ? 'primary-dark' : 'primary'}
+        href="https://musa-app.moneda.africa/account/login?redirect=/dashboard"
+      >
+        Login
+      </Button>
+      <Button
+        variant="secondary"
+        href="https://musa-app.moneda.africa/account/register"
+      >
+        Get Started
+      </Button>
+    </div>
+  );
+}
+
 function HeaderSecondary() {
   const router = useRouter();
 
   const headerIntro = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.8 },
+    initial: { y: -100, opacity: 0 },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.1, ease: 'easeOut' },
+    },
+    exit: { y: -100, opacity: 0 },
   };
+
   return (
     <motion.header
-      className={`${styles.navContainer} ${styles.navContainerSecondary}`}
+      className={`${styles.navContainer} ${styles.whiteBg}`}
       variants={headerIntro}
       initial="initial"
       animate="animate"
       exit="exit"
     >
-      <nav className={styles.navigation2}>
+      <nav className={styles.navigation}>
         <Image
           width={600}
           height={1200}
@@ -51,6 +76,7 @@ function HeaderSecondary() {
             <NavLink key={link.label} link={link} motion={motion} />
           ))}
         </ul>
+        <AuthButtons />
       </nav>
     </motion.header>
   );
@@ -99,6 +125,7 @@ function HeaderInitial({ darkHero }) {
             />
           ))}
         </ul>
+        <AuthButtons darkHero={darkHero} />
       </nav>
     </motion.header>
   );

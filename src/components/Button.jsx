@@ -11,10 +11,11 @@ function Button({
   type = 'button',
   active = false,
   disabled = false,
+  className = '',
 }) {
   const commonClassName = `${styles.button} ${styles[variant]} ${
     active ? styles[`active-${variant}`] : ''
-  } ${disabled ? styles.disabled : ''}`;
+  } ${disabled ? styles.disabled : ''} ${className}`;
 
   if (href) {
     return (

@@ -14,12 +14,14 @@
 
   padding: 2rem 4rem;
   /* background-color: var(--color-white); */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navContainerSecondary {
   justify-items: center;
   top: 3rem;
   left: 0;
+  border-bottom: none;
 }
 
 .navigation {
@@ -55,6 +57,12 @@
   width: max-content;
 }
 
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .logo {
   width: 64px;
   height: auto;
@@ -64,6 +72,11 @@
 .dark {
   color: var(--color-white);
   background-color: transparent;
+}
+
+.whiteBg {
+  background-color: var(--color-white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 @media only screen and (max-width: 93.75em) {

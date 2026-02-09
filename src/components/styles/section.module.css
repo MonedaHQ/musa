@@ -23,6 +23,10 @@
   background-color: var(--color-dark-brown);
 }
 
+.darkerBrown {
+  background-color: var(--color-darker-brown);
+}
+
 .grey {
   background-color: var(--color-light-grey);
 }

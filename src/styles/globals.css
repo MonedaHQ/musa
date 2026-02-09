@@ -19,18 +19,18 @@
 
   --border-radius-reg: 0.8rem;
 
-  --font-size-display: 5.4rem;
-  --font-size-h1: 4.2rem;
-  --font-size-h2: 3.6rem;
-  --font-size-h3: 3.4rem;
-  --font-size-h4: 2.4rem;
-  --font-size-h5: 2rem;
-  --font-size-h6: 1.8rem;
+  --font-size-display: clamp(4rem, 2rem + 4vw, 5.4rem);
+  --font-size-h1: clamp(3.2rem, 1.8rem + 3.5vw, 6rem);
+  --font-size-h2: clamp(2.6rem, 1.5rem + 2.5vw, 3.6rem);
+  --font-size-h3: clamp(2.2rem, 1.2rem + 2vw, 3.4rem);
+  --font-size-h4: clamp(2rem, 1rem + 1.5vw, 2.8rem);
+  --font-size-h5: clamp(1.8rem, 1rem + 1vw, 2.4rem);
+  --font-size-h6: clamp(1.6rem, 1rem + 1vw, 2.2rem);
 
-  --font-size-paragraph-big: 2rem;
-  --font-size-paragraph-regular: 1.8rem;
-  --font-size-paragraph-small: 1.6rem;
-  --font-size-caption: 1.4rem;
+  --font-size-paragraph-big: clamp(1.8rem, 1.7rem + 0.5vw, 2rem);
+  --font-size-paragraph-regular: clamp(1.6rem, 1.5rem + 0.5vw, 1.8rem);
+  --font-size-paragraph-small: clamp(1.4rem, 1.35rem + 0.25vw, 1.6rem);
+  --font-size-caption: clamp(1.2rem, 1.15rem + 0.25vw, 1.4rem);
 }
 
 ::selection {
@@ -107,46 +107,4 @@ p strong {
 
 figure {
   max-width: 100%;
-}
-
-@media (max-width: 87.5em) {
-  :root {
-    --font-size-h1: 4rem;
-    --font-size-h2: 3.4rem;
-    --font-size-h3: 3.2rem;
-    --font-size-h4: 1.4em;
-    --font-size-h5: 1.8rem;
-    --font-size-h6: 1.6rem;
-
-    --font-size-paragraph-big: 1.8rem;
-    --font-size-paragraph-regular: 1.6rem;
-    --font-size-paragraph-small: 1.4rem;
-    --font-size-caption: 1.2rem;
-  }
-}
-
-@media (max-width: 48.75em) {
-  :root {
-    --font-size-h1: 3.6rem;
-    --font-size-h2: 3.2rem;
-    --font-size-h3: 3rem;
-    --font-size-h4: 1.4rem;
-    --font-size-h5: 1.8rem;
-    --font-size-h6: 1.6rem;
-  }
-}
-
-@media (max-width: 31.25em) {
-  :root {
-    --font-size-h1: 3.6rem;
-    --font-size-h2: 3rem;
-    --font-size-h3: 2.8rem;
-    --font-size-h4: 1.4rem;
-  }
-}
-@media (max-width: 27.375em) {
-  :root {
-    --font-size-h1: 2.5rem;
-    --font-size-h2: 2rem;
-  }
 }

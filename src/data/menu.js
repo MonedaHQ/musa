@@ -10,8 +10,8 @@ export const homeMenuLinks = [
   },
 
   {
-    path: '#features',
-    label: 'Features',
+    path: '#what-we-do',
+    label: 'What we do',
     action: null,
     icon: null,
     icon2: null,
@@ -36,7 +36,7 @@ export const homeMenuLinks = [
 
   {
     path: '#contact',
-    label: 'Contact us',
+    label: 'Contact',
     icon: null,
     icon2: null,
     dropdown: null,

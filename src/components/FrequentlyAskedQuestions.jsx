@@ -5,6 +5,7 @@ import { useState } from 'react';
 import styles from './styles/frequentlyaskedquestions.module.css';
 import { motion, AnimatePresence, animate } from 'framer-motion';
 import { PiMinusThin, PiPlusCircleLight } from 'react-icons/pi';
+import CharacterAnimator from './CharacterAnimator';
 
 const frequentlyAskedQuestions = [
   {
@@ -63,13 +64,13 @@ function FrequentlyAskedQuestions() {
 function HeadingComponent() {
   return (
     <div className={styles.headingBox}>
-      <h2>FAQs</h2>
+      <CharacterAnimator as="h2" text="FAQs" />
     </div>
   );
 }
 
 function FAQs({ faqArray = frequentlyAskedQuestions }) {
-  const [isOpen, setIsOpen] = useState(0);
+  const [isOpen, setIsOpen] = useState(null);
   return (
     <div className={styles.faqsBox}>
       {faqArray.map((item, index) => (
@@ -97,15 +98,15 @@ function QuestionBox({ questionItem, stateControls, index }) {
       <div className={styles.questionBox}>
         <div
           className={styles.questionHeading}
-          onClick={() => setIsOpen(index)}
+          onClick={() => setIsOpen((cur) => (cur === index ? null : index))}
         >
-          <h4
+          <h5
             className={`${styles.question} ${
               index === isOpen && styles.activeQuestion
             }`}
           >
             {questionItem.question}
-          </h4>
+          </h5>
           <div className={styles.iconBox}>
             {index !== isOpen ? <PiPlusCircleLight /> : <PiMinusThin />}
           </div>

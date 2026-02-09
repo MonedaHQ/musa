@@ -6,8 +6,10 @@ import Herosection from './homepage/Herosection';
 import MobileNavigationHeader from '@/components/mobileNav/MobileNavigationHeader';
 import WhyMusa from './homepage/WhyMusa';
 import Metrics from './homepage/Metrics';
-import Features from './homepage/Features';
+import WhatWeDo from './homepage/WhatWeDo';
+import WhatWeBring from './homepage/WhatWeBring';
 import Testimonials from './homepage/Testimonials';
+import Subscribe from './homepage/Subscribe';
 import FrequentlyAskedQuestions from '@/components/FrequentlyAskedQuestions';
 import Footer from '@/components/Footer';
 import Contact from './homepage/Contact';
@@ -25,12 +27,13 @@ function LandingPage() {
       <MobileNavigationHeader />
       <Herosection />
       <WhyMusa />
-      <Metrics />
-      <Features />
+      {/* <Metrics /> */}
+      <WhatWeDo />
+      <WhatWeBring />
       <Testimonials />
+      <Subscribe />
       <FrequentlyAskedQuestions />
       <Contact />
-      <MapSection />
       <Footer />
     </>
   );

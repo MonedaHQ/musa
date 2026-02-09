@@ -6,6 +6,7 @@ function Section({
   paddingTop = true,
   paddingBottom = true,
   id = null,
+  fullWidth = false,
 }) {
   return (
     <section
@@ -14,7 +15,7 @@ function Section({
       } ${paddingBottom ? '' : styles.noBottomPad}`}
       id={id ? id : ''}
     >
-      <main className={`${styles.margin} `}>{children}</main>
+      <main className={`${fullWidth ? '' : styles.margin} `}>{children}</main>
     </section>
   );
 }

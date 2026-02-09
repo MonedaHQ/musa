@@ -1,0 +1,115 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: contain;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: var(--color-white);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subheading {
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heading h2 {
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  /* Increased min-height to ensure the line is visible and longer */
+  min-height: 12rem;
+}
+
+.stepNumberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepNumber {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-h5);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.line {
+  width: 2px;
+  flex-grow: 1;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6) 30%,
+    transparent 30%
+  );
+  background-size: 2px 15px;
+  background-repeat: repeat-y;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stepContent {
+  /* Center title vertically with the number */
+  display: flex;
+  align-items: center;
+  height: 5rem; /* Match stepNumber height to center initially */
+}
+
+@media (max-width: 64em) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+  }
+
+  .imageContainer {
+    order: 2;
+  }
+
+  .content {
+    order: 1;
+  }
+}

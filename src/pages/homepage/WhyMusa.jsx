@@ -1,71 +1,77 @@
-import { useRef, useEffect } from 'react';
-import Hls from 'hls.js';
-
+import Image from 'next/image';
 import Section from '@/components/Section';
-
 import styles from './styles/whymusa.module.css';
 
-import { IoIosCheckmarkCircle } from 'react-icons/io';
+import {
+  HiOutlineDocumentText,
+  HiOutlineClock,
+  HiOutlineBookmark,
+} from 'react-icons/hi2';
+import WordAnimator from '@/components/WordAnimator';
 
-const musaReasons = [
-  '<strong>No Collateral, No Delays</strong> – Quick funding designed for Critical SMEs.',
-  '<strong>Beyond Financing</strong> – Hands-on execution support to keep your projects on track.',
-  '<strong>Smarter Risk, Faster Approvals</strong> – Our risk rating algorithm ensures fair, data-driven decisions.',
-  '<strong>Built for African SMEs</strong> – Tailored solutions that help you scale and succeed.',
-  '<strong>Backed by Moneda</strong> – Trusted expertise in funding Africa’s natural resource value chain.',
+const features = [
+  {
+    title: 'Operational Accuracy',
+    description:
+      'Every module mirrors real financial and operational processes, reducing errors and manual work.',
+    icon: <HiOutlineDocumentText />,
+  },
+  {
+    title: 'Speed with Control',
+    description:
+      'Automated workflows accelerate transactions without compromising governance or risk checks.',
+    icon: <HiOutlineClock />,
+  },
+  {
+    title: 'Scales Without Rework',
+    description:
+      'Musa grows with transaction volume, product expansion, and new stakeholders.',
+    icon: <HiOutlineBookmark />,
+  },
 ];
 
 function WhyMusa() {
   return (
     <Section>
       <div className={styles.container} id="why-musa">
-        <h2>
-          Why <span>Musa</span>
-        </h2>
-        <div className={styles.content}>
-          <Benefits />
-          <VideoPlayer />
+        <div className={styles.header}>
+          <h4 className={styles.subtitle}>WHY MUSA</h4>
+          <WordAnimator as="h2" text="Structured finance, simplified." />
+          <p style={{ textAlign: 'center' }}>
+            Musa is core operating system for managing complex contractor
+            financing, from onboarding and KYC to transaction execution and
+            repayment. Designed to mirror real business workflows, Musa connects
+            customers, internal teams, and investors on a single, intelligent
+            platform.
+          </p>
         </div>
-        <div className={styles.getStarted}>
-          <p>Let Musa power your growth.</p>
-          <a href="https://musa.monedainvest.app/">Get started today</a>
+
+        <div className={styles.contentGrid}>
+          <div className={styles.featureList}>
+            {features.map((feature, index) => (
+              <div className={styles.featureItem} key={index}>
+                <div className={styles.iconWrapper}>{feature.icon}</div>
+                <div className={styles.featureText}>
+                  <WordAnimator as="h3" text={feature.title} />
+                  <p>{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.imageContainer}>
+            <Image
+              src="/assets/transactions.png"
+              alt="Musa Transactions Dashboard"
+              width={1000}
+              height={800}
+              className={styles.image}
+              draggable={false}
+            />
+          </div>
         </div>
       </div>
     </Section>
-  );
-}
-
-function Benefits() {
-  return (
-    <div className={styles.benefitsBox}>
-      {musaReasons.map((reason) => (
-        <Benefit reason={reason} key={reason} />
-      ))}
-    </div>
-  );
-}
-
-function Benefit({ reason }) {
-  return (
-    <div className={styles.benefit}>
-      <IoIosCheckmarkCircle />
-      <p dangerouslySetInnerHTML={{ __html: reason }} />
-    </div>
-  );
-}
-
-function VideoPlayer() {
-  return (
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/tfpg2dGHZ74?si=4p38IPUjfRcNUSRE?rel=0&modestbranding=1&showinfo=0&autoplay=0&controls=1"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-      className={styles.video}
-    />
   );
 }
 

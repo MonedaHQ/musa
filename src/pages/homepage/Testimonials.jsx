@@ -1,4 +1,6 @@
+import { HiArrowLeft, HiArrowRight } from 'react-icons/hi2';
 import Section from '@/components/Section';
+import CharacterAnimator from '@/components/CharacterAnimator';
 
 import styles from './styles/testimonials.module.css';
 import Image from 'next/image';
@@ -26,10 +28,35 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <Section paddingTop={false}>
-      <div className={styles.testimonials} id="testimonials">
-        <h3>Testimonials</h3>
+    <Section color="darkerBrown" id="testimonials">
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <span className={styles.subheading}>WHAT THEY SAY</span>
+          <h2 className={styles.heading}>
+            <CharacterAnimator text="Testimonials" as="span" />
+          </h2>
+          <p className={styles.description}>
+            Here are some testimonials from our users after using Musa to manage
+            their business expenses.
+          </p>
+        </div>
+
         <TestimonialCards />
+
+        {/* <div className={styles.navigation}>
+          <button
+            className={styles.navButton}
+            aria-label="Previous testimonial"
+          >
+            <HiArrowLeft />
+          </button>
+          <button
+            className={`${styles.navButton} ${styles.navButtonActive}`}
+            aria-label="Next testimonial"
+          >
+            <HiArrowRight />
+          </button>
+        </div> */}
       </div>
     </Section>
   );
@@ -50,12 +77,15 @@ function Testimonial({ testimonial }) {
     <div className={styles.card}>
       <p>{testimonial.paragraph}</p>
       <div className={styles.client}>
-        <Image
-          width={48}
-          height={48}
-          src={testimonial.logo}
-          alt={testimonial.client}
-        />{' '}
+        <div className={styles.logoWrapper}>
+          <Image
+            width={48}
+            height={48}
+            src={testimonial.logo}
+            alt={testimonial.client}
+            draggable={false}
+          />
+        </div>
         <h5>{testimonial.client}</h5>
       </div>
     </div>

@@ -7,6 +7,34 @@
   box-sizing: border-box;
 }
 
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+.loginBtn {
+  font-size: 2rem;
+  color: var(--color-brown);
+  padding-left: 0;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.getStartedBtn {
+  justify-content: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 31.25em) {
+  .loginBtn {
+    font-size: 1.6rem;
+  }
+}
+
 .mainNavLinks {
   display: grid;
   row-gap: 3rem;

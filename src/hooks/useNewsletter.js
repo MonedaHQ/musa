@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 export function useNewsletter() {
-  const { mutate: newsletterSignup, isLoading: isSigningUp } = useMutation({
+  const { mutate: newsletterSignup, isPending: isSigningUp } = useMutation({
     mutationFn: (data) => newsletterApi(data), // returns the promise
     onSuccess: () => {
       toast.success('Success!');

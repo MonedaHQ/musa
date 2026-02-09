@@ -1,8 +1,11 @@
 import { homeMenuLinks } from '@/data/menu';
 import styles from './styles/mobilenavigation.module.css';
 import MobileNavLinks from './MobileNavLinks';
+import Button from '../Button';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import { perspective } from '@/data/anim';
 
 function MobileNavigation() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -11,17 +14,7 @@ function MobileNavigation() {
   const isHome = router.pathname === '/';
   let menuData = homeMenuLinks;
   if (!isHome) {
-    menuData = [
-      // {
-      //   path: '/',
-      //   label: 'Home',
-      //   action: 'onMouseEnter',
-      //   icon: <HiMiniChevronDown />,
-      //   icon2: <HiMiniChevronUp />,
-      //   dropdown: null,
-      // },
-      ...homeMenuLinks,
-    ];
+    menuData = [...homeMenuLinks];
   }
 
   function handleDropdownToggle(label) {
@@ -41,6 +34,29 @@ function MobileNavigation() {
           );
         })}
       </ul>
+      <motion.div
+        className={styles.authButtons}
+        variants={perspective}
+        animate="enter"
+        exit="exit"
+        initial="initial"
+        custom={menuData.length}
+      >
+        <Button
+          variant="primary"
+          href="https://musa-app.moneda.africa/account/login?redirect=/dashboard"
+          className={styles.loginBtn}
+        >
+          Login
+        </Button>
+        <Button
+          variant="secondary"
+          href="https://musa-app.moneda.africa/account/register"
+          className={styles.getStartedBtn}
+        >
+          Get Started
+        </Button>
+      </motion.div>
     </div>
   );
 }
