@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import NavLink from './NavLink';
 import Button from '../Button';
@@ -10,14 +10,61 @@ import { useRouter } from 'next/router';
 import styles from './styles/navigation.module.css';
 
 function Navigation({ scrollPosition = 0, darkHero = false }) {
-  const isHero = scrollPosition > 120;
   const router = useRouter();
+  const route = router.route;
+  const isScrolled = scrollPosition > 120;
+
+  const showWhiteBg = isScrolled;
+  const navContainerClass = `${styles.navContainer} ${
+    showWhiteBg ? styles.whiteBg : darkHero ? styles.dark : ''
+  }`;
+
+  const effectiveDarkHero = showWhiteBg ? false : darkHero;
+
+  const logoSrc = showWhiteBg
+    ? '/assets/logo/musa-dark.png'
+    : '/assets/logo/musa-logo.png';
+
+  const headerIntro = {
+    initial: { opacity: 0, y: -50 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.1, ease: [0.67, 0.41, 0, 1] },
+    },
+  };
 
   return (
-    <AnimatePresence>
-      {/* <HeaderInitial darkHero={darkHero} /> */}
-      {isHero ? <HeaderSecondary /> : <HeaderInitial darkHero={darkHero} />}
-    </AnimatePresence>
+    <motion.header
+      className={navContainerClass}
+      variants={headerIntro}
+      initial="initial"
+      animate="animate"
+    >
+      <nav className={styles.navigation}>
+        <Image
+          width={showWhiteBg ? 600 : 408.5}
+          height={showWhiteBg ? 1200 : 79}
+          src={logoSrc}
+          alt="Musa Logo"
+          draggable={false}
+          className={styles.logo}
+          onClick={() => router.push('/')}
+        />
+        <ul className={styles.navigationList}>
+          {homeMenuLinks.map((link) => (
+            <NavLink
+              key={link.label}
+              link={link}
+              motion={motion}
+              darkHero={effectiveDarkHero}
+              isActive={route === link.path}
+            />
+          ))}
+        </ul>
+        <AuthButtons darkHero={effectiveDarkHero} />
+      </nav>
+    </motion.header>
   );
 }
 
@@ -37,97 +84,6 @@ function AuthButtons({ darkHero }) {
         Get Started
       </Button>
     </div>
-  );
-}
-
-function HeaderSecondary() {
-  const router = useRouter();
-
-  const headerIntro = {
-    initial: { y: -100, opacity: 0 },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.1, ease: 'easeOut' },
-    },
-    exit: { y: -100, opacity: 0 },
-  };
-
-  return (
-    <motion.header
-      className={`${styles.navContainer} ${styles.whiteBg}`}
-      variants={headerIntro}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      <nav className={styles.navigation}>
-        <Image
-          width={600}
-          height={1200}
-          src={`/assets/logo/musa-dark.png`}
-          draggable={false}
-          alt="logo"
-          className={styles.logo}
-          onClick={() => router.push('/')}
-        />
-        <ul className={styles.navigationList}>
-          {homeMenuLinks.map((link) => (
-            <NavLink key={link.label} link={link} motion={motion} />
-          ))}
-        </ul>
-        <AuthButtons />
-      </nav>
-    </motion.header>
-  );
-}
-
-function HeaderInitial({ darkHero }) {
-  const router = useRouter();
-  const route = router.route;
-
-  const headerIntro = {
-    initial: { opacity: 0, y: -50 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.1, ease: [0.67, 0.41, 0, 1] },
-    },
-    exit: { opacity: 0, y: -30 },
-  };
-
-  return (
-    <motion.header
-      className={`${styles.navContainer} ${darkHero ? styles.dark : ''}`}
-      variants={headerIntro}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      <nav className={styles.navigation}>
-        <Image
-          width={408.5}
-          height={79}
-          src={`/assets/logo/musa-logo.png`}
-          alt="Musa Logo"
-          draggable={false}
-          className={styles.logo}
-          onClick={() => router.push('/')}
-        />
-        <ul className={styles.navigationList}>
-          {homeMenuLinks.map((link) => (
-            <NavLink
-              key={link.label}
-              link={link}
-              motion={motion}
-              darkHero={darkHero}
-              isActive={route === link.path}
-            />
-          ))}
-        </ul>
-        <AuthButtons darkHero={darkHero} />
-      </nav>
-    </motion.header>
   );
 }
 
