@@ -32,7 +32,11 @@ export default function CTACard() {
               system, eliminating operational gaps and strengthening risk
               oversight across the private debt lifecycle. 
             </p>
-            <Button href="/contact" variant="tertiary" active>
+            <Button
+              href="https://musa-app.moneda.africa/account/register"
+              variant="tertiary"
+              active
+            >
               Get Started
             </Button>
           </div>
