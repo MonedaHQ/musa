@@ -6,27 +6,34 @@ import {
   HiOutlineDocumentText,
   HiOutlineClock,
   HiOutlineBookmark,
+  HiOutlineBuildingLibrary,
 } from 'react-icons/hi2';
 import WordAnimator from '@/components/WordAnimator';
 
 const features = [
   {
-    title: 'Operational Accuracy',
+    title: 'One Unified System ',
     description:
-      'Every module mirrors real financial and operational processes, reducing errors and manual work.',
+      'Musa brings credit management and payment operations into a single,  platform, eliminating silos manual workarounds and fragmented processes. ',
     icon: <HiOutlineDocumentText />,
   },
   {
-    title: 'Speed with Control',
+    title: 'Embedded Risk Control',
     description:
-      'Automated workflows accelerate transactions without compromising governance or risk checks.',
+      'Risk management is integrated across the entire credit lifecycle: from underwriting and approvals to monitoring and repayment tracking. ',
     icon: <HiOutlineClock />,
   },
   {
-    title: 'Scales Without Rework',
+    title: 'End-to-End Lifecycle Management',
     description:
-      'Musa grows with transaction volume, product expansion, and new stakeholders.',
+      'Originate, approve, disburse, monitor, collect, and report. All within one continuous system designed for operational precision.',
     icon: <HiOutlineBookmark />,
+  },
+  {
+    title: 'Purpose-Built for Private Debt',
+    description:
+      'Designed specifically for lenders, credit funds, and structured finance teams managing complex portfolios; not adapted from generic lending software..',
+    icon: <HiOutlineBuildingLibrary />,
   },
 ];
 
@@ -36,13 +43,15 @@ function WhyMusa() {
       <div className={styles.container} id="why-musa">
         <div className={styles.header}>
           <h4 className={styles.subtitle}>WHY MUSA</h4>
-          <WordAnimator as="h2" text="Structured finance, simplified." />
+          <WordAnimator
+            as="h2"
+            text="Private Debt Is Complex. Your Infrastructure Shouldn’t Be. "
+          />
           <p style={{ textAlign: 'center' }}>
-            Musa is core operating system for managing complex contractor
-            financing, from onboarding and KYC to transaction execution and
-            repayment. Designed to mirror real business workflows, Musa connects
-            customers, internal teams, and investors on a single, intelligent
-            platform.
+            Credit origination, underwriting, portfolio monitoring, repayments,
+            reporting, and payment execution are often spread across
+            disconnected tools. That fragmentation creates risk, slows
+            decision-making, and increases operational cost. 
           </p>
         </div>
 
@@ -61,7 +70,7 @@ function WhyMusa() {
 
           <div className={styles.imageContainer}>
             <Image
-              src="/assets/transactions.png"
+              src="/assets/screens/transaction-dashboard.png"
               alt="Musa Transactions Dashboard"
               width={1000}
               height={800}

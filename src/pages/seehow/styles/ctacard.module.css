@@ -1,0 +1,199 @@
+.wrapper {
+  padding: 4rem 0;
+  accent-color: var(--color-brown);
+}
+
+.wrapper ::selection {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+.card {
+  background-color: var(--color-orange);
+  border-radius: 2.4rem;
+  padding: 8rem 8rem;
+  min-height: 38rem;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 84%;
+  margin: auto;
+}
+
+/* Gradient circles background */
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+/* Large circle - bottom left, mostly hidden */
+.circle1 {
+  width: 528px;
+  height: 525px;
+  background: linear-gradient(
+    180deg,
+    rgba(204, 85, 0, 1) 0%,
+    rgba(131, 153, 233, 1) 100%
+  );
+  top: -39px;
+  left: -15px;
+  opacity: 0.6;
+  transform: rotate(90deg);
+}
+
+/* Medium circle - top left */
+.circle2 {
+  width: 464px;
+  height: 461px;
+  background: linear-gradient(
+    180deg,
+    rgba(204, 85, 0, 1) 0%,
+    rgba(131, 153, 233, 1) 100%
+  );
+  top: -44px;
+  left: -400px;
+  opacity: 0.5;
+  transform: rotate(90deg);
+  z-index: 3;
+}
+
+/* Medium circle - overlapping */
+.circle3 {
+  width: 464px;
+  height: 461px;
+  background: linear-gradient(
+    180deg,
+    rgba(204, 85, 0, 1) 0%,
+    rgba(131, 153, 233, 1) 100%
+  );
+  top: -9px;
+  left: -180px;
+  opacity: 1;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+/* Circle with different gradient - center overlap */
+.circle4 {
+  width: 495px;
+  height: 491px;
+  background: linear-gradient(
+    180deg,
+    rgba(204, 85, 0, 1) 0%,
+    rgba(179, 141, 114, 1) 100%
+  );
+  top: -24px;
+  left: 254px;
+  opacity: 1;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  display: contents;
+}
+
+.left,
+.right {
+  position: relative;
+  z-index: 2;
+}
+
+.left {
+  color: var(--color-white);
+}
+
+.right {
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.4rem;
+}
+
+@media (max-width: 100em) {
+  .card {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+/* Responsive */
+@media (max-width: 75em) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 5rem 4rem;
+  }
+
+  /* Adjust circles for tablet */
+  .circle1 {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+  }
+
+  .circle2,
+  .circle3 {
+    display: none;
+  }
+
+  .circle4 {
+    width: 350px;
+    height: 350px;
+    left: 10%;
+    top: -6%;
+  }
+}
+
+@media (max-width: 30em) {
+  .wrapper {
+    padding: 2rem 0;
+  }
+
+  .card {
+    padding: 4rem 2.4rem;
+    border-radius: 1.6rem;
+  }
+
+  .left h2 {
+    font-size: 2.6rem;
+  }
+
+  .right p {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .circle1 {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -80px;
+  }
+
+  .circle4 {
+    width: 250px;
+    height: 250px;
+  }
+}

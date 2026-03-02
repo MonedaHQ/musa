@@ -35,11 +35,10 @@ function Herosection() {
 function HeroContent() {
   return (
     <div className={styles.heroContent}>
-      <WordAnimator text="Powering Structured Transactions, End-to-End" />
+      <WordAnimator text="The Operating System for Private Debt" />
       <h4>
-        Musa is not just a tool. It’s the system that holds everything together.{' '}
-        <br />
-        Gain clarity. Enforce control. Move forward with confidence.
+        No 1 and leading unified credit management and payment infrastructure,
+        designed to control risk without fragmentation. 
       </h4>
       <div className={styles.ctaButtons}>
         <Button
@@ -48,7 +47,7 @@ function HeroContent() {
         >
           Get started
         </Button>
-        <Button variant="primary" href="#how-it-works">
+        <Button variant="primary" href="/see-how">
           See How it works
         </Button>
       </div>

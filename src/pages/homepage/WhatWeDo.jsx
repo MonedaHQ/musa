@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Section from '@/components/Section';
+import FeatureSteps from '@/components/FeatureSteps';
 import styles from './styles/whatwedo.module.css';
-import WordAnimator from '@/components/WordAnimator';
 
 const steps = [
   {
@@ -37,35 +37,12 @@ export default function WhatWeDo() {
           />
         </div>
 
-        <div className={styles.content}>
-          <div className={styles.heading}>
-            <span className={styles.subheading}>WHAT WE DO</span>
-            <WordAnimator
-              as="h2"
-              text="One platform. Every transaction stage."
-            />
-            <p>
-              Centralizes every activity required to originate, approve,
-              execute, and monitor structured transactions.
-            </p>
-          </div>
-
-          <div className={styles.steps}>
-            {steps.map((step, i) => (
-              <div key={i} className={styles.step}>
-                <div className={styles.stepNumberContainer}>
-                  <div className={styles.stepNumber}>{step.number}</div>
-                  {i !== steps.length - 1 && (
-                    <div className={styles.line}></div>
-                  )}
-                </div>
-                <div className={styles.stepContent}>
-                  <h5>{step.title}</h5>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <FeatureSteps
+          subheading="WHAT WE DO"
+          heading="One platform. Every transaction stage."
+          description="Centralizes every activity required to originate, approve, execute, and monitor structured transactions."
+          steps={steps}
+        />
       </div>
     </Section>
   );

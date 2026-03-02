@@ -14,7 +14,7 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
   const route = router.route;
   const isScrolled = scrollPosition > 120;
 
-  const showWhiteBg = isScrolled;
+  const showWhiteBg = isScrolled || !darkHero;
   const navContainerClass = `${styles.navContainer} ${
     showWhiteBg ? styles.whiteBg : darkHero ? styles.dark : ''
   }`;

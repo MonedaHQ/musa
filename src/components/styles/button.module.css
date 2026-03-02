@@ -55,6 +55,7 @@
 .primary,
 .primary-dark,
 .secondary,
+.tertiary,
 .submit {
   padding: 1rem 1.4rem;
   display: flex;
@@ -76,8 +77,14 @@
   color: var(--color-white);
 }
 
+.tertiary {
+  background-color: var(--color-white);
+  color: var(--color-dark-brown);
+}
+
 .primary:hover,
 .secondary:hover,
+.tertiary:hover,
 .submit:hover {
   scale: 1.04;
 }
@@ -92,9 +99,14 @@
   color: var(--color-orange);
 }
 
+.tertiary:hover {
+  color: var(--color-white);
+}
+
 .primary:hover::after,
 .primary-dark::after,
 .secondary:hover::after,
+.tertiary:hover::after,
 .submit:hover::after {
   opacity: 1;
   transform: scaleX(1) scaleY(1);
@@ -109,12 +121,14 @@
   background-color: var(--color-light-grey);
 }
 
-.submit::after {
+.submit::after,
+.tertiary::after {
   background-color: var(--color-brown);
 }
 
 .primary::after,
 .secondary::after,
+.tertiary::after,
 .submit::after {
   position: absolute;
   content: '';

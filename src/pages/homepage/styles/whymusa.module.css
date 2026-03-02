@@ -84,20 +84,23 @@
 }
 
 .imageContainer {
+  /* Image positioned bottom-right with top/left padding only */
   background-color: #f5f6f8;
   border-radius: 1.6rem;
-  padding: 4rem 4rem 0 4rem;
+  padding: 4rem 0 0 4rem;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: hidden;
 }
 
 .image {
-  width: 100%;
+  width: 90%;
   height: auto;
   border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: block;
 }

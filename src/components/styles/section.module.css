@@ -38,6 +38,10 @@
   background-color: var(--color-faded-orange);
 }
 
+.cream {
+  background-color: rgba(251, 244, 238, 1);
+}
+
 .margin {
   max-width: 86%;
   margin: auto;
@@ -50,6 +54,9 @@
   .noTopPad {
     padding-top: 0;
   }
+  .noBottomPad {
+    padding-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 65em) {
@@ -58,6 +65,9 @@
   }
   .noTopPad {
     padding-top: 0;
+  }
+  .noBottomPad {
+    padding-bottom: 0;
   }
 }
 @media (max-width: 32.5em) {

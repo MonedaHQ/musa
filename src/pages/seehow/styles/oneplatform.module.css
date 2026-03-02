@@ -1,0 +1,72 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end; /* Align items to bottom so image stays at bottom */
+  max-width: 100%;
+}
+
+.contentWrapper {
+  padding-left: 7vw;
+  margin-right: 4rem;
+}
+
+@media (min-width: 75em) {
+  /* On larger screens, the standard margin might behave differently if max-width is fixed in pixels elsewhere, 
+     but assuming % roughly holds. */
+  .contentWrapper {
+    padding-left: 7vw;
+  }
+}
+
+@media (max-width: 32.5em) {
+  .contentWrapper {
+    padding-left: 7vw;
+  }
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  /* Shift slightly to the right to bleed off edge if desired, 
+     but "no padding" usually means just aligned to edge. */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: block; /* Remove inline gap */
+  margin-bottom: -4px; /* Fix for potential inline-block gap */
+}
+
+@media (max-width: 64em) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    padding: 0 7vw;
+  }
+
+  .contentWrapper {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  .imageContainer {
+    margin: 0 -7vw;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+
+  .image {
+    max-width: 90%;
+    margin: 0 auto;
+    border-radius: 12px;
+    margin-bottom: 0;
+  }
+}
