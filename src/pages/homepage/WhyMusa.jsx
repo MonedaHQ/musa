@@ -1,71 +1,107 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import Section from '@/components/Section';
+import Button from '@/components/Button';
+import TabToggle from '@/components/TabToggle';
 import styles from './styles/whymusa.module.css';
 
 import {
   HiOutlineDocumentText,
-  HiOutlineClock,
-  HiOutlineBookmark,
-  HiOutlineBuildingLibrary,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineChartBar,
+  HiOutlineCreditCard,
+  HiOutlineGlobeAlt,
 } from 'react-icons/hi2';
 import WordAnimator from '@/components/WordAnimator';
 
-const features = [
+const financiersFeatures = [
   {
-    title: 'One Unified System ',
+    title: 'Credit Management',
     description:
-      'Musa brings credit management and payment operations into a single,  platform, eliminating silos manual workarounds and fragmented processes. ',
+      'End-to-end process for seamless transactions with your customers - from KYC to project monitoring.',
     icon: <HiOutlineDocumentText />,
   },
   {
-    title: 'Embedded Risk Control',
+    title: 'Automated Collections',
     description:
-      'Risk management is integrated across the entire credit lifecycle: from underwriting and approvals to monitoring and repayment tracking. ',
-    icon: <HiOutlineClock />,
+      'Reduce your risk and crash your default rate with our automated collections and repayment feature.',
+    icon: <HiOutlineChatBubbleLeftRight />,
   },
   {
-    title: 'End-to-End Lifecycle Management',
+    title: 'Reporting & Analytics',
     description:
-      'Originate, approve, disburse, monitor, collect, and report. All within one continuous system designed for operational precision.',
-    icon: <HiOutlineBookmark />,
+      "No more running around for reconciliation for your periodic reports - it's all in one, safe place in Musa.",
+    icon: <HiOutlineChartBar />,
+  },
+];
+
+const smesFeatures = [
+  {
+    title: 'Access to credit',
+    description:
+      'Get sustainable, no-limit, no-collateral financing from our anchor financer - Moneda',
+    icon: <HiOutlineCreditCard />,
   },
   {
-    title: 'Purpose-Built for Private Debt',
+    title: 'Cross-border payments',
     description:
-      'Designed specifically for lenders, credit funds, and structured finance teams managing complex portfolios; not adapted from generic lending software..',
-    icon: <HiOutlineBuildingLibrary />,
+      'Get access to local & foreign virtual accounts enabling you transact with global suppliers.',
+    icon: <HiOutlineGlobeAlt />,
+  },
+  {
+    title: 'Reporting & Analytics',
+    description:
+      'Real-time insights into your business that helps you see the past with clarity and predict the future with certainty.',
+    icon: <HiOutlineChartBar />,
   },
 ];
 
 function WhyMusa() {
-  return (
-    <Section>
-      <div className={styles.container} id="why-musa">
-        <div className={styles.header}>
-          <h4 className={styles.subtitle}>WHY MUSA</h4>
-          <WordAnimator
-            as="h2"
-            text="Private Debt Is Complex. Your Infrastructure Shouldn’t Be. "
-          />
-          <p style={{ textAlign: 'center' }}>
-            Credit origination, underwriting, portfolio monitoring, repayments,
-            reporting, and payment execution are often spread across
-            disconnected tools. That fragmentation creates risk, slows
-            decision-making, and increases operational cost. 
-          </p>
-        </div>
+  const [activeTab, setActiveTab] = useState('financiers');
 
+  const features =
+    activeTab === 'financiers' ? financiersFeatures : smesFeatures;
+
+  return (
+    <>
+      <Section>
+        <div className={styles.container} id="why-musa">
+          <div className={styles.header}>
+            <h4 className={styles.subtitle}>WHAT WE DO</h4>
+            <p style={{ textAlign: 'center' }}>
+              Musa is a private credit catalyst - bridging the gap between
+              alternative financiers and SMEs and removing all bottlenecks
+              between them.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <div className={styles.contentSection}>
         <div className={styles.contentGrid}>
           <div className={styles.featureList}>
+            <TabToggle
+              tabs={[
+                { value: 'financiers', label: 'Alternative Financiers' },
+                { value: 'smes', label: 'SMEs' },
+              ]}
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+            />
+
             {features.map((feature, index) => (
               <div className={styles.featureItem} key={index}>
                 <div className={styles.iconWrapper}>{feature.icon}</div>
                 <div className={styles.featureText}>
-                  <WordAnimator as="h3" text={feature.title} />
+                  <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>
               </div>
             ))}
+
+            <Button variant="secondary" href="/see-how">
+              How It Works
+            </Button>
           </div>
 
           <div className={styles.imageContainer}>
@@ -80,7 +116,7 @@ function WhyMusa() {
           </div>
         </div>
       </div>
-    </Section>
+    </>
   );
 }
 

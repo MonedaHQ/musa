@@ -7,6 +7,7 @@ const WordAnimator = ({
   animationDuration = 0.5,
   staggerDelay = 0.1,
   spacing = '1rem',
+  highlightWords = {}, // e.g., { 'Fear': 'var(--color-orange)' }
 }) => {
   const [isClient, setIsClient] = useState(false);
   const words = text.split(' ');
@@ -38,18 +39,25 @@ const WordAnimator = ({
         }}
         ref={ref}
       >
-        {words.map((word, index) => (
-          <div
-            key={index}
-            style={{
-              display: 'inline-block',
-              marginRight: spacing,
-              visibility: 'hidden',
-            }}
-          >
-            <Tag>{`${word}  `} </Tag>
-          </div>
-        ))}
+        {words.map((word, index) => {
+          const highlightColor = highlightWords[word];
+          return (
+            <div
+              key={index}
+              style={{
+                display: 'inline-block',
+                marginRight: spacing,
+                visibility: 'hidden',
+              }}
+            >
+              <Tag
+                style={highlightColor ? { color: highlightColor } : undefined}
+              >
+                {`${word}  `}
+              </Tag>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -62,18 +70,23 @@ const WordAnimator = ({
         overflow: 'hidden',
       }}
     >
-      {words.map((word, index) => (
-        <motion.div
-          key={index}
-          custom={index}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={wordVariants}
-          style={{ display: 'inline-block', marginRight: spacing }}
-        >
-          <Tag>{`${word}  `} </Tag>
-        </motion.div>
-      ))}
+      {words.map((word, index) => {
+        const highlightColor = highlightWords[word];
+        return (
+          <motion.div
+            key={index}
+            custom={index}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            variants={wordVariants}
+            style={{ display: 'inline-block', marginRight: spacing }}
+          >
+            <Tag style={highlightColor ? { color: highlightColor } : undefined}>
+              {`${word}  `}
+            </Tag>
+          </motion.div>
+        );
+      })}
     </div>
   );
 };

@@ -9,12 +9,14 @@
   --color-white: #fff;
   --color-light-grey: #f5f4f3;
   --color-mid-grey: #efefef;
+  --color-dark-grey: #b7b7b7;
   --color-dark-blue: #3e3e59;
   --color-black: #292929;
   --color-darker-brown: #140800;
   --color-brown-linear: linear-gradient(180deg, #210d00 0%, #140800 100%);
   --color-faded-orange: rgba(204, 85, 0, 0.05);
-  --color-yellow-ish: rgba(251, 244, 238, 1) --color-green: #00cc99;
+  --color-yellow-ish: rgba(251, 244, 238, 1);
+  --color-green: #00cc99;
 
   --border-radius-reg: 0.8rem;
 

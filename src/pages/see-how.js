@@ -21,7 +21,7 @@ function SeeHowPage() {
       <main style={{ paddingTop: '100px' }}>
         <SeeHowHero />
         <HowItWorks />
-        <OnePlatform />
+        {/* <OnePlatform /> */}
         <CTACard />
         <Contact />
       </main>

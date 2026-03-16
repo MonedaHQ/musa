@@ -13,14 +13,14 @@ function Footer() {
           <div className={styles.links}>
             <Button
               variant="link-dark"
-              href="https://moneda.africa/privacy-policy"
+              href="https://musa-app.moneda.africa/privacy"
             >
               Privacy Policy
             </Button>
             <span className={styles.separator}>|</span>
             <Button
               variant="link-dark"
-              href="https://moneda.africa/terms-of-use"
+              href="https://musa-app.moneda.africa/terms"
             >
               Terms of use
             </Button>

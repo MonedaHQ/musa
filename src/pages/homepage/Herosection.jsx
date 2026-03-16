@@ -35,10 +35,13 @@ function Herosection() {
 function HeroContent() {
   return (
     <div className={styles.heroContent}>
-      <WordAnimator text="The Operating System for Private Debt" />
+      <WordAnimator
+        text="Imagine Private Credit, But Without Fear"
+        highlightWords={{ Fear: 'var(--color-orange)' }}
+      />
       <h4>
-        No 1 and leading unified credit management and payment infrastructure,
-        designed to control risk without fragmentation. 
+        Musa is a unified credit management and payment infrastructure built to
+        facilitate trade in African markets by mitigating risk.
       </h4>
       <div className={styles.ctaButtons}>
         <Button

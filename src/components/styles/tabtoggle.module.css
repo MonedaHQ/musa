@@ -1,0 +1,47 @@
+.tabToggle {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-dark-grey);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.tabButton:hover {
+  color: var(--color-orange);
+}
+
+.tabButtonActive {
+  color: var(--color-black);
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-orange);
+}
+
+/* Light variant */
+.light .tabButton {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.light .tabButton:hover {
+  color: var(--color-white);
+}
+
+.light .tabButtonActive {
+  color: var(--color-white);
+}

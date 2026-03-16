@@ -11,42 +11,22 @@ const frequentlyAskedQuestions = [
   {
     question: 'What is Musa?',
     answer:
-      'Musa is a proprietary lending, payments, and transaction-management software built to power Africa’s alternative credit ecosystem. Built by Moneda Invest Africa, Musa empowers alternative financiers specifically for Africa’s Critical SMEs in energy, minerals, agriculture and infrastructure to seamlessly provide credit, facilitate cross-border payments, and manage risk with speed and transparency.',
+      'Musa is a platform that bridges the gap between alternative financiers and SMEs for the effective management of private credit facilities and payment processing capabilities to create value with credit.',
+  },
+  {
+    question: 'Is Musa a FinTech?',
+    answer:
+      'No, Musa is a technology company that provides infrastructure for alternative financiers to effectively manage their credit and provides tools needed to manage their risk',
+  },
+  {
+    question: "What is Musa's interest rate?",
+    answer:
+      'Pricing for credit is strictly between the financier and the borrower - Musa only charges the financier for the credit management services provided. Payments passing through the platform are also subject to fees as prescribed by our payment processing partners.',
   },
   {
     question: 'Who can use Musa?',
     answer:
-      'Musa is built for Critical SMEs—businesses that play an essential role in Africa’s natural resource industries, including suppliers, service providers, and contractors in sectors like oil and gas, mining, and infrastructure development.',
-  },
-  {
-    question: 'How does Musa’s funding work?',
-    answer:
-      'Musa provides no-collateral funding to eligible SMEs based on an advanced risk-rating algorithm. This ensures quick access to capital while mitigating risks, enabling businesses to execute contracts without financial bottlenecks.',
-  },
-  {
-    question: 'How long does onboarding take?',
-    answer:
-      'Onboarding is designed to be fast and efficient, with KYC completed in seconds. Once approved, users gain immediate access to Musa’s funding and transaction capabilities.',
-  },
-  {
-    question: 'Does Musa support foreign currency transactions?',
-    answer:
-      'Yes, Musa has real-time FX conversion capabilities, allowing users to transact in multiple currencies, including USD, GBP, EUR, and NGN, without unnecessary delays or hidden fees.',
-  },
-  {
-    question: 'What makes Musa different from traditional financing options?',
-    answer:
-      'Unlike traditional lenders, Musa doesn’t require collateral and provides tailored financial support based on your business’s actual needs and transaction history. It also integrates execution support, ensuring businesses not only access funds but also successfully deliver on contracts.',
-  },
-  {
-    question: 'Can I track my transactions on Musa?',
-    answer:
-      'Yes, Musa offers a seamless user experience with real-time transaction tracking, automated updates, and clear visibility into your financial activities.',
-  },
-  {
-    question: 'How do I get started with Musa?',
-    answer:
-      'Simply sign up, complete the quick onboarding process, and submit your first transaction request. Our team is available to guide you through the process and ensure a smooth experience.',
+      'Alternative financiers providing private credit to SMEs can use Musa to smoothen their processes and effectively manage their risk portfolio. SMEs can use Musa to access no-limit, no-collateral credit from our anchor financier - Moneda. Visit moneda.africa for more information.',
   },
 ];
 

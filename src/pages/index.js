@@ -5,6 +5,7 @@ import { scrollOffset } from '@/utils/config';
 import Herosection from './homepage/Herosection';
 import MobileNavigationHeader from '@/components/mobileNav/MobileNavigationHeader';
 import WhyMusa from './homepage/WhyMusa';
+import WhatMakesUsDifferent from './homepage/WhatMakesUsDifferent';
 import Metrics from './homepage/Metrics';
 import WhatWeDo from './homepage/WhatWeDo';
 import WhatWeBring from './homepage/WhatWeBring';
@@ -27,9 +28,10 @@ function LandingPage() {
       <MobileNavigationHeader />
       <Herosection />
       <WhyMusa />
+      <WhatMakesUsDifferent />
       {/* <Metrics /> */}
-      <WhatWeDo />
-      <WhatWeBring />
+      {/* <WhatWeDo /> */}
+      {/* <WhatWeBring /> */}
       <Testimonials />
       <Subscribe />
       <FrequentlyAskedQuestions />
