@@ -17,30 +17,33 @@ const tabs = [
 
 const financiersSteps = [
   {
-    image: '/assets/screens/fam.png',
-    title: 'Approvals',
-    description: 'Complete KYC to enjoy the full benefit on Musa',
+    image: '/assets/screens/confirm-kyc.png',
+    title: 'Onboard',
+    description: 'Seamless KYC process for all your customers.',
   },
   {
-    image: '/assets/screens/wallet-overview.png',
-    title: 'Wallet',
-    description: 'Create Your Account in Minutes , Not Through Endless Forms',
+    image: '/assets/screens/fam.png',
+    title: 'Approve',
+    description:
+      'Receive transaction requests pre-assessed by our bespoke risk rating algorithm and make investment decisions in minutes, not weeks.',
   },
   {
     image: '/assets/screens/reporting-2.png',
-    title: 'Report',
-    description: 'Create transactions and enjoy the full Musa benefit',
+    title: 'Disburse',
+    description:
+      'We provide virtual accounts that enable you disburse to and on-behalf of your customers across multiple countries.',
   },
   {
     image: '/assets/screens/risk-estimation.png',
-    title: 'Risk Estimation',
+    title: 'Monitor',
     description:
-      'Assess risk with our embedded risk controls and real-time portfolio visibility.',
+      'Clear oversight of operations and financials for all transactions.',
   },
   {
-    image: '/assets/screens/transaction-management.png',
-    title: 'Transaction Management',
-    description: 'Manage transactions efficiently with our unified platform.',
+    image: '/assets/screens/reporting.png',
+    title: 'Report',
+    description:
+      'View real-time updates through our dashboards and maturity profile.',
   },
 ];
 
@@ -174,9 +177,21 @@ function HowItWorks() {
         </div>
 
         <div className={styles.ctaWrapper}>
-          <Button variant="secondary" onClick={() => handleScrollTo('contact', 100)}>
-            Talk to us
-          </Button>
+          {activeTab === 'financiers' ? (
+            <Button
+              variant="secondary"
+              onClick={() => handleScrollTo('contact', 100)}
+            >
+              Talk to us
+            </Button>
+          ) : (
+            <Button
+              variant="secondary"
+              href="https://musa-app.moneda.africa/account/register"
+            >
+              Get started
+            </Button>
+          )}
         </div>
       </div>
     </Section>

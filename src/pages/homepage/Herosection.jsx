@@ -38,6 +38,7 @@ function HeroContent() {
       <WordAnimator
         text="Imagine Private Credit, But Without Fear"
         highlightWords={{ Fear: 'var(--color-orange)' }}
+        as="h1"
       />
       <h4>
         Musa is a unified credit management and payment infrastructure built to

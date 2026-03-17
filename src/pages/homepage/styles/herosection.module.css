@@ -1,8 +1,7 @@
 .heroSection {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 800px; /* Ensure it doesn't get too squashed on small screens */
+  min-height: 100vh;
   overflow: hidden;
   background-color: #140800;
   color: var(--color-white);
@@ -10,15 +9,18 @@
   display: flex;
   flex-direction: column;
   padding-top: 8rem; /* Space for fixed header */
+  padding-bottom: 0;
 }
 
 .container {
   width: 100%;
-  height: 100%;
+  flex: 1;
   display: grid;
   grid-template-rows: 1fr auto;
   align-items: center;
   justify-items: center;
+  row-gap: 3rem;
+  padding: 2rem 0 0;
 }
 
 .ellipseTop,
@@ -46,10 +48,9 @@
   z-index: 1;
 
   width: 50%;
-  margin: auto;
 
   display: grid;
-  row-gap: 3rem;
+  row-gap: 2rem;
   justify-items: center;
   text-align: center;
 }
@@ -154,6 +155,82 @@
   }
 
   .container {
-    gap: 4rem;
+    row-gap: 2rem;
+  }
+}
+
+/* Height-based media queries for short screens (e.g., 13" MacBook) */
+@media (max-height: 850px) {
+  .heroSection {
+    padding-top: 7rem;
+  }
+
+  .container {
+    row-gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  .heroContent {
+    row-gap: 1.5rem;
+  }
+
+  .heroContent h4 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .ctaButtons {
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-height: 750px) {
+  .heroSection {
+    padding-top: 6rem;
+  }
+
+  .container {
+    row-gap: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .heroContent {
+    row-gap: 1rem;
+  }
+
+  .heroContent h4 {
+    font-size: 1.6rem;
+  }
+
+  .ctaButtons {
+    margin-top: 0;
+    gap: 1rem;
+  }
+
+  .dashboardPreview {
+    width: 85%;
+  }
+}
+
+@media (max-height: 650px) {
+  .heroSection {
+    padding-top: 5rem;
+  }
+
+  .container {
+    row-gap: 1rem;
+  }
+
+  .heroContent {
+    row-gap: 0.8rem;
+  }
+
+  .heroContent h4 {
+    font-size: 1.4rem;
+  }
+
+  .dashboardPreview {
+    width: 90%;
   }
 }
