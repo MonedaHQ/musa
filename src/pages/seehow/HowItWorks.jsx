@@ -62,7 +62,7 @@ const smesSteps = [
     image: '/assets/screens/wallet-screen.png',
     title: 'Pay',
     description:
-      'When approved, receive funds in your virtual account and disburse to',
+      'When approved, receive funds in your virtual account and disburse to your suppliers globally.',
   },
   {
     image: '/assets/screens/reporting.png',
