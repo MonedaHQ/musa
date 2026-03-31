@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   background-color: #140800;
   color: var(--color-white);
 
@@ -47,10 +47,11 @@
   position: relative;
   z-index: 1;
 
-  width: 50%;
+  width: 60%;
+  margin-top: 9rem;
 
   display: grid;
-  row-gap: 2rem;
+  row-gap: 4rem;
   justify-items: center;
   text-align: center;
 }

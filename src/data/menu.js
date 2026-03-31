@@ -10,8 +10,8 @@ export const homeMenuLinks = [
   },
 
   {
-    path: '#what-we-do',
-    label: 'What we do',
+    path: 'see-how',
+    label: 'How it works',
     action: null,
     icon: null,
     icon2: null,
