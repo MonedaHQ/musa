@@ -3,9 +3,9 @@
   width: 100%;
   min-height: 100vh;
   overflow: visible;
-  background-color: #140800;
+  /* background-color: #140800; */
   color: var(--color-white);
-
+  background-image: url('/background-img.svg');
   display: flex;
   flex-direction: column;
   padding-top: 8rem; /* Space for fixed header */
@@ -46,10 +46,8 @@
 .heroContent {
   position: relative;
   z-index: 1;
-
-  width: 60%;
-  margin-top: 9rem;
-
+  /* width: 60%; */
+  margin-top: 14rem;
   display: grid;
   row-gap: 4rem;
   justify-items: center;
@@ -69,18 +67,25 @@
   z-index: 2;
   border-top-left-radius: 1.2rem;
   border-top-right-radius: 1.2rem;
+  border:  1px solid white;
   overflow: hidden;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2); */
   line-height: 0; /* Creates space removal issue fix */
   margin-bottom: -2px; /* Ensure flush with bottom */
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
+} 
 
 .dashboardPreview img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.heroContent h1 {
+  font-size: 70px;
+  line-height: 90px;
+  font-weight: 400;
 }
 
 .heroContent h4 {
