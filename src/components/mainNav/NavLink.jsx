@@ -46,17 +46,17 @@ function NavLink({ link, motion, darkHero, isActive }) {
   }
 
   return (
-    <li key={link.label}>
+    <li key={link.label} className="flex  justify-center s text-[14px] leading-[21px]">
+      <span
+        className="cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleClick}
+        active={isActive || isAtSection}
+      >
+        {link.label} {icon}
+      </span>
       <div className={styles.navLink}>
-        <Button
-          variant={`${darkHero ? 'primary-dark' : 'primary'}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={handleClick}
-          active={isActive || isAtSection}
-        >
-          {link.label} {icon}
-        </Button>
         {link.dropdown && (
           <DropDown
             dropdownList={link.dropdown}

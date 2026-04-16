@@ -8,6 +8,7 @@ const WordAnimator = ({
   staggerDelay = 0.1,
   spacing = "1rem",
   highlightWords = {},
+  className = "",
 }) => {
   const [isClient, setIsClient] = useState(false);
   const ref = useRef(null);
@@ -95,6 +96,7 @@ const WordAnimator = ({
                 }}
               >
                 <Tag
+                  className={className}
                   style={highlightColor ? { color: highlightColor } : undefined}
                 >
                   {word}

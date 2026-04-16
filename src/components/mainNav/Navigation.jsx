@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
-import NavLink from './NavLink';
-import Button from '../Button';
+import NavLink from "./NavLink";
+import Button from "../Button";
 
-import { homeMenuLinks } from '@/data/menu';
-import { useRouter } from 'next/router';
+import { homeMenuLinks } from "@/data/menu";
+import { useRouter } from "next/router";
 
-import styles from './styles/navigation.module.css';
+import styles from "./styles/navigation.module.css";
 
 function Navigation({ scrollPosition = 0, darkHero = false }) {
   const router = useRouter();
@@ -16,14 +16,14 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
 
   const showWhiteBg = isScrolled || !darkHero;
   const navContainerClass = `${styles.navContainer} ${
-    showWhiteBg ? styles.whiteBg : darkHero ? styles.dark : ''
+    showWhiteBg ? styles.whiteBg : darkHero ? styles.dark : ""
   }`;
 
   const effectiveDarkHero = showWhiteBg ? false : darkHero;
 
   const logoSrc = showWhiteBg
-    ? '/assets/logo/musa-dark.png'
-    : '/assets/logo/musa-logo.png';
+    ? "/assets/logo/musa-dark.png"
+    : "/assets/logo/musa-logo.png";
 
   const headerIntro = {
     initial: { opacity: 0, y: -50 },
@@ -41,7 +41,7 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
       initial="initial"
       animate="animate"
     >
-      <nav className={styles.navigation}>
+      <nav className="flex justify-between items-center  container px-10 md:px-16">
         <Image
           width={showWhiteBg ? 600 : 408.5}
           height={showWhiteBg ? 1200 : 79}
@@ -49,9 +49,9 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
           alt="Musa Logo"
           draggable={false}
           className={styles.logo}
-          onClick={() => router.push('/')}
+          onClick={() => router.push("/")}
         />
-        <ul className={styles.navigationList}>
+        <ul className="flex gap-6 md:gap-16 items-center">
           {homeMenuLinks.map((link) => (
             <NavLink
               key={link.label}
@@ -72,12 +72,13 @@ function AuthButtons({ darkHero }) {
   return (
     <div className={styles.authButtons}>
       <Button
-        variant={darkHero ? 'primary-dark' : 'primary'}
+        variant={darkHero ? "primary-dark" : "primary"}
         href="https://musa-app.moneda.africa/account/login?redirect=/dashboard"
       >
         Login
       </Button>
       <Button
+        className="rounded-[4px] text-white px-9 py-5 font-normal"
         variant="secondary"
         href="https://musa-app.moneda.africa/account/register"
       >

@@ -3,7 +3,6 @@ import { HiArrowLeft, HiArrowRight } from 'react-icons/hi2';
 import Section from '@/components/Section';
 import CharacterAnimator from '@/components/CharacterAnimator';
 import TabToggle from '@/components/TabToggle';
-
 import styles from './styles/testimonials.module.css';
 import Image from 'next/image';
 
@@ -44,10 +43,12 @@ function Testimonials() {
     activeTab === 'financiers' ? financiersTestimonials : smesTestimonials;
 
   return (
-    <Section color="darkerBrown" id="testimonials">
-      <div className={styles.container}>
+    <div id="testimonials">
+      <div className={`py-40  ${styles.container}`}>
         <div className={styles.header}>
-          <span className={styles.subheading}>WHAT THEY SAY</span>
+          <h4 className="text-[20px] text-[--color-orange] font-regular">
+            WHAT THEY SAY
+          </h4>
           <h2 className={styles.heading}>
             <CharacterAnimator text="Testimonials" as="span" />
           </h2>
@@ -58,8 +59,8 @@ function Testimonials() {
 
         <TabToggle
           tabs={[
-            { value: 'financiers', label: 'Alternative Financiers' },
-            { value: 'smes', label: 'SMEs' },
+            { value: "financiers", label: "Alternative Financiers" },
+            { value: "smes", label: "SMEs" },
           ]}
           activeTab={activeTab}
           onTabChange={setActiveTab}
@@ -69,7 +70,7 @@ function Testimonials() {
           <TestimonialCards testimonials={testimonials} />
         </div>
       </div>
-    </Section>
+    </div>
   );
 }
 

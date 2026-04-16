@@ -58,14 +58,15 @@
 }
 
 .authButtons {
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
 .logo {
-  width: 64px;
-  height: auto;
+  width: 77px;
+  height: 59px;
   cursor: pointer;
 }
 
