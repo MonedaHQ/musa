@@ -174,8 +174,9 @@ function ContactForm() {
           <Button
             type="submit"
             variant="secondary"
+            className='rounded-[4px] !px-[3.25rem]'
             disabled={isSubmitting}
-            className={styles.submitBtn}
+            // className={styles.submitBtn}
           >
             {isSubmitting ? 'Sending...' : 'Submit'}
           </Button>
