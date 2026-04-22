@@ -18,23 +18,28 @@ export default function CTACard() {
 
           {/* Content */}
           <div className={styles.left}>
-            <WordAnimator
-              as="h2"
-              text="Built for Transactions That Can't Afford Mistakes"
-            />
+            <span className="text-[35px] leading-[45px]  md:text-[50px] md:leading-[60px]">
+              Built for Transactions <br className="hidden md:flex" /> That
+              Can't Afford <br className="hidden md:flex" /> Mistakes
+            </span>
           </div>
 
           <div className={styles.right}>
-            <p>
-              From onboarding counterparties to approving, executing, and
-              settling structured deals, Musa integrates credit management and
-              payment infrastructure into one continuous
-              system, eliminating operational gaps and strengthening risk
-              oversight across the private debt lifecycle. 
+            <p className=" text-[16px] font-normal text-white text-left">
+              From onboarding counterparties to approving, executing,{" "}
+              <br className="hidden md:flex" /> and settling structured
+              deals, Musa integrates credit <br className="hidden md:flex" />{" "}
+              management and payment infrastructure into one{" "}
+              <br className="hidden md:flex" /> continuous
+              system, eliminating operational gaps and{" "}
+              <br className="hidden md:flex" /> strengthening risk oversight
+              across the private debt <br className="hidden md:flex" />{" "}
+              lifecycle. 
             </p>
             <Button
               href="https://musa-app.moneda.africa/account/register"
               variant="tertiary"
+              className="rounded-[4px]"
               active
             >
               Get Started

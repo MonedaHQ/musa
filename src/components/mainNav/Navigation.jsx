@@ -41,7 +41,7 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
       initial="initial"
       animate="animate"
     >
-      <nav className="flex justify-between items-center  container px-10 md:px-16">
+      <nav className="flex justify-between items-center  container px-10 mx-auto">
         <Image
           width={showWhiteBg ? 600 : 408.5}
           height={showWhiteBg ? 1200 : 79}
@@ -51,7 +51,7 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
           className={styles.logo}
           onClick={() => router.push("/")}
         />
-        <ul className="flex gap-6 md:gap-16 items-center">
+        <ul className="hidden xl:flex gap-6 md:gap-16 items-center">
           {homeMenuLinks.map((link) => (
             <NavLink
               key={link.label}
@@ -62,7 +62,9 @@ function Navigation({ scrollPosition = 0, darkHero = false }) {
             />
           ))}
         </ul>
-        <AuthButtons darkHero={effectiveDarkHero} />
+        <div className={`hidden xl:block`}>
+          <AuthButtons darkHero={effectiveDarkHero} />
+        </div>
       </nav>
     </motion.header>
   );

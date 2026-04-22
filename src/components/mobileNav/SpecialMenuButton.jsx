@@ -24,9 +24,9 @@ function SpecialMenuButton({ isActive }) {
 
 function ButtonActual({ label, toggleMenu }) {
   return (
-    <button className={styles.el} onClick={() => toggleMenu()}>
+    <div className={styles.el} onClick={() => toggleMenu()}>
       <PerspectiveText label={label} />
-    </button>
+    </div>
   );
 }
 

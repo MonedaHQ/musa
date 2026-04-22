@@ -165,7 +165,7 @@
 /* Height-based media queries for short screens (e.g., 13" MacBook) */
 @media (max-height: 850px) {
   .heroSection {
-    padding-top: 7rem;
+    padding-top: 2rem;
   }
 
   .container {

@@ -96,13 +96,18 @@ function HowItWorks() {
     <Section color="cream">
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>HOW IT WORKS</span>
+          <span className="text-[20px] text-[--color-orange] font-semibold">
+            HOW IT WORKS
+          </span>
           <WordAnimator as="h2" text="Structured. Controlled. Unified." />
-          <p className={styles.description}>
-            Unlike fragmented stacks that separate underwriting, approvals, and
+          <p className="text-[#424242] text-center text-[16px] font-light">
+            Unlike fragmented stacks that separate underwriting, approvals, and{" "}
+            <br className="hidden md:block" />
             payments, Musa unifies credit management and capital execution in
-            one operating system. Every transaction moves through structured
-            workflows with embedded risk controls and full portfolio visibility.
+            one <br className="hidden md:block" /> operating system. Every
+            transaction moves through structured workflows{" "}
+            <br className="hidden md:block" /> with embedded risk controls and
+            full portfolio visibility.
           </p>
           <div className={styles.tabWrapper}>
             <TabToggle
@@ -116,7 +121,7 @@ function HowItWorks() {
         <div className={styles.carouselContainer}>
           {navState.showNav && (
             <button
-              className={`${styles.navButton} ${navState.isBeginning ? styles.navButtonDisabled : ''}`}
+              className={`${styles.navButton} ${navState.isBeginning ? styles.navButtonDisabled : ""}`}
               onClick={() => swiperInstance?.slidePrev()}
               disabled={navState.isBeginning}
               aria-label="Previous"
@@ -166,7 +171,7 @@ function HowItWorks() {
 
           {navState.showNav && (
             <button
-              className={`${styles.navButton} ${navState.isEnd ? styles.navButtonDisabled : ''}`}
+              className={`${styles.navButton} ${navState.isEnd ? styles.navButtonDisabled : ""}`}
               onClick={() => swiperInstance?.slideNext()}
               disabled={navState.isEnd}
               aria-label="Next"
@@ -177,16 +182,18 @@ function HowItWorks() {
         </div>
 
         <div className={styles.ctaWrapper}>
-          {activeTab === 'financiers' ? (
+          {activeTab === "financiers" ? (
             <Button
               variant="secondary"
-              onClick={() => handleScrollTo('contact', 100)}
+              className="rounded-[4px]"
+              onClick={() => handleScrollTo("contact", 100)}
             >
               Talk to us
             </Button>
           ) : (
             <Button
               variant="secondary"
+              className="rounded-[4px]"
               href="https://musa-app.moneda.africa/account/register"
             >
               Get started

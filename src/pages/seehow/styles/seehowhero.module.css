@@ -8,6 +8,10 @@
 
 .heroSection {
   background-color: var(--color-dark-brown);
+  background-image: url('/seehow-background.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
@@ -36,11 +40,13 @@
 }
 
 .subtitle {
-  font-size: 1.8rem;
+  font-size: 16px;
   opacity: 0.8;
-  margin-bottom: 2rem;
+  font-weight: 300;
+  /* margin-bottom: 4rem;
+  margin-top: 2rem; */
   max-width: 90%;
-  line-height: 1.6;
+  line-height: 24px;
 }
 
 .buttonWrapper {
@@ -104,16 +110,12 @@
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-bottom: 0;
     align-self: auto;
   }
 
   .subtitle {
     font-size: 1.5rem;
-    text-align: center;
     max-width: 70%;
   }
 
@@ -225,5 +227,11 @@
     right: -4rem;
     top: -3rem;
     border-width: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 80em) {
+  .heroSection {
+    background-image: none;
   }
 }

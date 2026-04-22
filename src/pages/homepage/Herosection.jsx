@@ -44,14 +44,16 @@ function HeroContent() {
           as="h1"
         />
       </div>
-      <div className='flex md:hidden'>
-        <h1 className='!text-[25px] !leading-[40px]'>
-          Imagine Private Credit, <br className='hidden md:block'/> But Without Fear
+      <div className="!text-start flex md:hidden">
+        <h1 className="!text-[40px] !leading-[55px]">
+          Imagine Private Credit, <br className="hidden md:block" /> But Without
+          <span style={{ color: "var(--color-orange)" }}>Fear</span>
         </h1>
       </div>
-      <h4 className="mt-5">
-        Musa is a unified credit management and payment infrastructure <br className='hidden md:block'/>{" "}
-        built to facilitate trade in African markets by mitigating risk.
+      <h4 className="mt-5 !text-start md:!text-center">
+        Musa is a unified credit management and payment infrastructure{" "}
+        <br className="hidden md:block" /> built to facilitate trade in African
+        markets by mitigating risk.
       </h4>
       <div className={`!my-10 flex items-center gap-6 ${styles.ctaButtons}`}>
         <Button

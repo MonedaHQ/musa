@@ -3,25 +3,14 @@
   top: 0rem;
   left: 0;
   width: 100%;
-
   transition: all 0.3s;
-
   display: grid;
   grid-auto-flow: column;
   justify-items: start;
   align-items: center;
   z-index: 1000;
-
-  padding: 2rem 4rem;
   /* background-color: var(--color-white); */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.navContainerSecondary {
-  justify-items: center;
-  top: 3rem;
-  left: 0;
-  border-bottom: none;
 }
 
 .navigation {
@@ -30,22 +19,6 @@
   align-items: center;
   width: 90%;
   margin: auto;
-}
-
-.navigation2 {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  column-gap: 8rem;
-  padding: 1rem 8rem;
-
-  background-color: var(--color-white);
-
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 0.8rem;
-
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px; */
 }
 
 .navigationList {
@@ -82,12 +55,7 @@
 
 @media only screen and (max-width: 93.75em) {
   .navContainer {
-    padding: 2rem 8rem;
-  }
-
-  .navContainerSecondary {
-    justify-items: center;
-    top: 4rem;
+    padding: 2rem 0rem;
   }
 
   .navigation {
@@ -95,9 +63,8 @@
   }
 }
 
-@media only screen and (max-width: 75em) {
-  .navContainer,
-  .navContainerSecondary {
+/* @media only screen and (max-width: 75em) {
+  .navContainer {
     display: none;
   }
-}
+} */
