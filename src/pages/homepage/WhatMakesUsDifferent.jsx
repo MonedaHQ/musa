@@ -22,13 +22,20 @@ function WhatMakesUsDifferent() {
     <Section color="cream" id="what-makes-us-different">
       <div className={styles.container}>
         <div className={styles.header}>
-          <h4 className={styles.subtitle}>WHAT MAKES US DIFFERENT</h4>
-          <WordAnimator as="h2" text="We See The Big Picture" />
+          <h4 className="text-[20px] text-[--color-orange] font-semibold">
+            WHAT MAKES US DIFFERENT
+          </h4>
+          <WordAnimator
+            as="h2"
+            text="We See The Big Picture"
+            className="!font-[500] !text-[40px] !leading-[150%] !tracking-[-3%]"
+          />
           <p className={styles.description}>
             There are too many silos in the African private credit ecosystem
-            creating the perception of high risk. We use technology to link all
-            moving parts of the African private credit ecosystem and foster
-            growth.
+            creating the perception <br className="hidden md:block" /> of high
+            risk. We use technology to link all moving parts of the African
+            private credit <br className="hidden md:block" /> ecosystem and
+            foster growth.
           </p>
         </div>
 

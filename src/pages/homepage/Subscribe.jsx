@@ -36,10 +36,13 @@ export default function Subscribe() {
         </div>
 
         <div className={styles.content}>
-          <span className={styles.subheading}>STAY AHEAD WITH MUSA</span>
+          <h4 className="text-[14px] text-[#9E9E9E] font-regular">
+            STAY AHEAD WITH MUSA
+          </h4>
           <p className={styles.description}>
             Be the first to know about new features, expert tips, and the latest
             updates. Sign up for our newsletter and unlock the full potential of
+            <br />
             Musa.
           </p>
 
@@ -76,8 +79,8 @@ export default function Subscribe() {
             </div>
 
             <div className={styles.buttonWrapper}>
-              <Button type="submit" variant="secondary" disabled={isSigningUp}>
-                {isSigningUp ? 'Subscribing...' : 'Subscribe'}
+              <Button type="submit" variant="secondary" className='rounded-[4px]' disabled={isSigningUp}>
+                {isSigningUp ? "Subscribing..." : "Subscribe"}
               </Button>
             </div>
           </form>

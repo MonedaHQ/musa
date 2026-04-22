@@ -1,34 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-function useScrollPosition(position = 200) {
-  const [scrollY, setScrollY] = useState(0);
-  const [isTracking, setIsTracking] = useState(true);
+export default function useScrollPosition(offset = 0) {
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isTracking) {
-        setScrollY(window.scrollY);
-      }
-
-      // Check if scrollY reaches 200 and stop tracking
-      if (window.scrollY >= position && isTracking) {
-        setIsTracking(false);
-      }
-
-      // Check if scrollY returns to 0 and resume tracking
-      if (window.scrollY <= position && !isTracking) {
-        setIsTracking(true);
-      }
+      const currentScroll = window.scrollY || window.pageYOffset;
+      setScrollPosition(currentScroll);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+
+    // ✅ set initial value
+    handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [isTracking, position]);
+  }, []);
 
-  return scrollY;
+  return scrollPosition;
 }
-
-export default useScrollPosition;

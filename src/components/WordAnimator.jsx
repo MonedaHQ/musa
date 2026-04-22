@@ -3,14 +3,14 @@ import { useEffect, useState, useRef } from 'react';
 
 const WordAnimator = ({
   text,
-  as: Tag = 'h1', // Default is h1, can be any HTML tag like p, span, etc.
+  as: Tag = "h1",
   animationDuration = 0.5,
   staggerDelay = 0.1,
-  spacing = '1rem',
-  highlightWords = {}, // e.g., { 'Fear': 'var(--color-orange)' }
+  spacing = "1rem",
+  highlightWords = {},
+  className = "",
 }) => {
   const [isClient, setIsClient] = useState(false);
-  const words = text.split(' ');
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -18,10 +18,21 @@ const WordAnimator = ({
     setIsClient(true);
   }, []);
 
+  const lines = text.split(/<br\s*\/?>/);
+  const parsedContent = lines.map((line, lineIndex) => ({
+    lineIndex,
+    words: line.trim().split(" ").filter(Boolean),
+  }));
+
+  let wordCounter = 0;
+  const flatWords = parsedContent.flatMap(({ lineIndex, words }) =>
+    words.map((word) => ({ word, lineIndex, staggerIndex: wordCounter++ })),
+  );
+
   const wordVariants = {
-    hidden: { y: '100%', opacity: 0 },
+    hidden: { y: "100%", opacity: 0 },
     visible: (index) => ({
-      y: '0%',
+      y: "0%",
       opacity: 1,
       transition: {
         duration: animationDuration,
@@ -32,61 +43,69 @@ const WordAnimator = ({
 
   if (!isClient) {
     return (
-      <div
-        style={{
-          display: 'inline-block',
-          overflow: 'hidden',
-        }}
-        ref={ref}
-      >
-        {words.map((word, index) => {
-          const highlightColor = highlightWords[word];
-          return (
-            <div
-              key={index}
-              style={{
-                display: 'inline-block',
-                marginRight: spacing,
-                visibility: 'hidden',
-              }}
-            >
-              <Tag
-                style={highlightColor ? { color: highlightColor } : undefined}
-              >
-                {`${word}  `}
-              </Tag>
-            </div>
-          );
-        })}
+      <div ref={ref}>
+        {parsedContent.map(({ lineIndex, words }) => (
+          <div key={lineIndex} style={{ display: "block" }}>
+            {words.map((word, wordIndex) => {
+              const highlightColor = highlightWords[word];
+              return (
+                <span
+                  key={wordIndex}
+                  style={{
+                    display: "inline-block",
+                    marginRight: spacing,
+                    visibility: "hidden",
+                  }}
+                >
+                  <Tag
+                    style={
+                      highlightColor ? { color: highlightColor } : undefined
+                    }
+                  >
+                    {word}
+                  </Tag>
+                </span>
+              );
+            })}
+          </div>
+        ))}
       </div>
     );
   }
 
   return (
-    <div
-      ref={ref}
-      style={{
-        display: 'inline-block',
-        overflow: 'hidden',
-      }}
-    >
-      {words.map((word, index) => {
-        const highlightColor = highlightWords[word];
-        return (
-          <motion.div
-            key={index}
-            custom={index}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            variants={wordVariants}
-            style={{ display: 'inline-block', marginRight: spacing }}
-          >
-            <Tag style={highlightColor ? { color: highlightColor } : undefined}>
-              {`${word}  `}
-            </Tag>
-          </motion.div>
-        );
-      })}
+    <div ref={ref}>
+      {parsedContent.map(({ lineIndex, words }) => (
+        <div key={lineIndex} style={{ display: "block" }}>
+          {words.map((word) => {
+            const flatWord = flatWords.find(
+              (fw) => fw.word === word && fw.lineIndex === lineIndex,
+            );
+            const highlightColor = highlightWords[word];
+            return (
+              <motion.span
+                key={`${lineIndex}-${word}`}
+                custom={flatWord?.staggerIndex}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={wordVariants}
+                style={{
+                  display: "inline-block",
+                  marginRight: spacing,
+                  overflow: "hidden",
+                }}
+              >
+                <Tag
+                  className={className}
+                  style={highlightColor ? { color: highlightColor } : undefined}
+                >
+                  {word}
+                </Tag>
+              </motion.span>
+            );
+          })}
+        </div>
+      ))}
     </div>
   );
 };

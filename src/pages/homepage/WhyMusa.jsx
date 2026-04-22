@@ -67,10 +67,12 @@ function WhyMusa() {
       <Section>
         <div className={styles.container} id="why-musa">
           <div className={styles.header}>
-            <h4 className={styles.subtitle}>WHAT WE DO</h4>
-            <p style={{ textAlign: 'center' }}>
+            <h4 className="text-[20px] text-[--color-orange] font-semibold">
+              WHAT WE DO
+            </h4>
+            <p className="text-[#212121] text-center text-[18px] font-normal">
               Musa is a private credit catalyst - bridging the gap between
-              alternative financiers and SMEs and removing all bottlenecks
+              alternative <br className='hidden md:block'/> financiers and SMEs and removing all bottlenecks
               between them.
             </p>
           </div>
@@ -82,8 +84,8 @@ function WhyMusa() {
           <div className={styles.featureList}>
             <TabToggle
               tabs={[
-                { value: 'financiers', label: 'Alternative Financiers' },
-                { value: 'smes', label: 'SMEs' },
+                { value: "financiers", label: "Alternative Financiers" },
+                { value: "smes", label: "SMEs" },
               ]}
               activeTab={activeTab}
               onTabChange={setActiveTab}
@@ -99,7 +101,7 @@ function WhyMusa() {
               </div>
             ))}
 
-            <Button variant="secondary" href="/see-how">
+            <Button className='rounded-[4px] !px-[3.25rem]' variant="secondary" href="/see-how">
               How It Works
             </Button>
           </div>
